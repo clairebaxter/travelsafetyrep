@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171011050831) do
+ActiveRecord::Schema.define(version: 20171011150726) do
 
   create_table "lines", force: :cascade do |t|
     t.string "train"
     t.string "color"
     t.string "borough"
+    t.text   "description"
   end
 
 end
