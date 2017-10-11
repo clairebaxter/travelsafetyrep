@@ -1,0 +1,16 @@
+%h1 URBAN PANCAKE
+%h2 NYC Train Lines
+
+%table#lines
+  %thead
+    %tr
+      %th Train
+      %th Color
+      %th Borough
+    %tbody
+      - @lines.each do |line|
+        %tr
+          %td= line.train
+          %td= line.color
+          %td= line.borough
+          %td= link_to "More about the #{line.train}", line_path(line)
