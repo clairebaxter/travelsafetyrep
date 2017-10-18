@@ -13,4 +13,7 @@
 
 %p#description= @line.description
 
-= link_to 'Back to lines list', lines_path
+%p= link_to 'Back to lines list', lines_path,{:id => "link"}
+
+%input{:type=>"text", :required => true}
+%button.button Confirm Location
