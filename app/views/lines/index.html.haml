@@ -1,6 +1,11 @@
+%html
+%head
+
+<link rel="stylesheet" type="text/css" href="application.css">
 %h1 URBAN PANCAKE
 <src="app/assets/images/Slide1.jpg" alt="logo not here!" height="42" width="42">
 %h2 NYC Train Lines
+
 
 %table#lines
   %thead
@@ -14,4 +19,4 @@
           %td= line.train
           %td= line.color
           %td= line.borough
-          %td= link_to "More about the #{line.train}", line_path(line)
+          %td= link_to "More about the #{line.train}", line_path(line), {:id => "link"}
