@@ -9,13 +9,17 @@
     Borough:
     = @line.borough
 
-  = image_tag("Ltrain1.png", {:style => "width:100px;"})
+  = image_tag("Ltrain1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ltrain2.png", {:style => "width:400px;"})
 
 %h3 Description:
 
 %p#description= @line.description
+%p= link_to 'Find your stop', stops_path,{:id => "link"}
 
-%p= link_to 'Back to lines list', lines_path,{:id => "link"}
+%p= link_to 'Back to lines list', lines_path,{:id => "returnLink", :id => "link"}
+
 
 %input{:type=>"text", :required => true}
 %button.button Confirm Location

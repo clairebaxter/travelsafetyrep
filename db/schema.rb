@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018035103) do
+ActiveRecord::Schema.define(version: 20171019010537) do
 
   create_table "lines", force: :cascade do |t|
     t.string "train"
@@ -21,5 +21,9 @@ ActiveRecord::Schema.define(version: 20171018035103) do
   end
 
   add_index "lines", ["train"], name: "index_lines_on_train", unique: true
+
+  create_table "stops", force: :cascade do |t|
+    t.string "stop"
+  end
 
 end
