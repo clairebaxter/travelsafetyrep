@@ -1,4 +1,4 @@
--# in app/views/movies/show.html.haml
+-# in app/views/line/show.html.haml
 %h2 Details about #{@line.train}
 
 %ul#details
@@ -8,6 +8,8 @@
   %li
     Borough:
     = @line.borough
+
+  = image_tag("Ltrain1.png", {:style => "width:100px;"})
 
 %h3 Description:
 
