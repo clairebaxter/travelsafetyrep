@@ -23,8 +23,6 @@ ActiveRecord::Schema.define(version: 20171019010537) do
     t.text   "description"
   end
 
-  add_index "lines", ["train"], name: "index_lines_on_train", unique: true
-
   create_table "stops", force: :cascade do |t|
     t.string "stop"
   end

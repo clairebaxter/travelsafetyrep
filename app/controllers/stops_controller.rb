@@ -1,4 +1,5 @@
 class StopsController < ApplicationController
+=begin
     def show
         id = params[:stops]
         @stops = Stop.find(id)
@@ -12,5 +13,5 @@ class StopsController < ApplicationController
      #   id = params[:id]
       #  @stops = Stop.find(id)
     #end
-    
+=end
 end
