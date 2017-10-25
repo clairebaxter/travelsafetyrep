@@ -3,13 +3,13 @@ Rails.application.routes.draw do
   resources :lines
   root :to => redirect('/lines')
   #get 'stops/stops'#, :to => "stops/stop", :as => stop 
-  #get 'stops/stopusers'
+  get '/stops/:id/stop', to: 'stops#stop'
   
   
   resource :stops do
     get "stop"
   end
-  resources :stops, path: "stops", as: "stops"
+  #resources :stops
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
