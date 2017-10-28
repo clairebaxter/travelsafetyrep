@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # added this line from stackover flow to help with puts error 
+  put 'line/:id' => 'lines#update', :as => 'update_line'
   
   resources :lines
   root :to => redirect('/lines')

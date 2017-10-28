@@ -1,0 +1,13 @@
+%h2 Create New Line
+
+= form_tag lines_path, :method => :post do
+    = label :line, :train, 'Train'
+    = text_field :line, :train
+    
+    = label :line, :color, 'Color'
+    = text_field :line, :color
+    
+    = label :line, :borough, 'Borough'
+    = text_field :line, :borough
+    
+    = submit_tag 'Save Changes'
