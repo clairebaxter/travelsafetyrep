@@ -22,3 +22,5 @@
           %td= line.color
           %td= line.borough
           %td= link_to "More about the #{line.train}", line_path(line), {:id => "link"}
+          -#%td= destroy
+= link_to 'Add new line', new_line_path

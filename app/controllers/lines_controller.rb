@@ -25,14 +25,14 @@ class LinesController < ApplicationController
     def update
         @line = Line.find params[:id]
         @line.update_attributes!(params[:line])
-        flash[:notice] = "Line '#{@line.title}' was successfully updated."
+        flash[:notice] = "Line #{@line.title} was successfully updated."
         redirect_to line_path(@line)
     end
     
     def destroy
         @line = Line.find(params[:id])
-        @movie.destroy
-        flash[:notice] = "Line '#{@line.train}' deleted."
+        @line.destroy
+        flash[:notice] = "Line #{@line.train} deleted."
         redirect_to lines_path
     end
     
