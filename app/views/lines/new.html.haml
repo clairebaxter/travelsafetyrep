@@ -11,3 +11,5 @@
     = select :line, :borough, ['The Bronx','Brooklyn', 'Manhattan', 'Staten Island','Queens']
     
     = submit_tag 'Save Changes'
+    
+%p= link_to 'Back to lines list', lines_path,{:id => "returnLink", :id => "link"}

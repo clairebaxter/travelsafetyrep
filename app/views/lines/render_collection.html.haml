@@ -1,0 +1,6 @@
+-# A single row of the All Lines table
+%tr
+  %td= line.train 
+  %td= line.color
+  %td= line.borough
+  %td= link_to "More about #{line.train}", lines_path(line)
