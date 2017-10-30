@@ -5,9 +5,9 @@
     = text_field :line, :train
     
     = label :line, :color, 'Color'
-    = text_field :line, :color
+    = select :line, :color, ['Blue', 'Brown', 'Gray', 'Green', 'Light Green', 'Orange', 'Yellow', 'Purple', 'Red']
     
     = label :line, :borough, 'Borough'
-    = text_field :line, :borough
+    = select :line, :borough, ['The Bronx','Brooklyn', 'Manhattan', 'Staten Island','Queens']
     
     = submit_tag 'Save Changes'

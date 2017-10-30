@@ -1,17 +1,34 @@
 Rails.application.routes.draw do
   # added this line from stackover flow to help with puts error 
-  put 'line/:id' => 'lines#update', :as => 'update_line'
+  #put 'line/:id' => 'lines#update', :as => 'update_line'
   
   resources :lines
   root :to => redirect('/lines')
-  #get 'stops/stops'#, :to => "stops/stop", :as => stop 
-  get '/stops/:id/stop', to: 'stops#stop'
+  
+  
+  get '/lines/:id' => 'lines#show'
+  get '/lines/new' => 'lines#new'
+  post '/lines' => 'lines#create'
+  get '/lines/:id/edit' => 'lines#edit'
+  put '/lines.:id' => 'lines#update'
+  delete '/lines.:id' => 'lines#destroy'
+  
+  
   
   
   resource :stops do
     get "stop"
   end
   #resources :stops
+  #get 'stops/stops'#, :to => "stops/stop", :as => stop 
+  get '/stops/:id/stop', to: 'stops#stop'
+  
+  
+  
+  
+  
+  
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

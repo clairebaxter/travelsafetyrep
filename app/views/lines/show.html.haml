@@ -15,8 +15,8 @@
 %h3 Description:
 
 %p#description= @line.description
-%p= link_to 'Find your stop', stops_path,{:id => "stoplink"}
-%p= link_to 'Edit Info', edit_line_path(@line)
+-#%p= link_to 'Find your stop', stops_path,{:id => "stoplink"}
+%p= link_to 'Edit Info', edit_line_path(@line),{:id => "link"}
 %p= link_to 'Delete', line_path(@line), :method => :delete
 %p= link_to 'Back to lines list', lines_path,{:id => "returnLink", :id => "link"}
 
