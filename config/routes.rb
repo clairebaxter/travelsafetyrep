@@ -13,8 +13,24 @@ Rails.application.routes.draw do
   put '/lines.:id' => 'lines#update'
   delete '/lines.:id' => 'lines#destroy'
   
+  get  'auth/:provider/callback' => 'sessions#create'
+  post 'logout' => 'sessions#destroy'
+  get  'auth/failure' => 'sessions#failure'
+  get  'auth/facebook', :as => 'login'
   
+  #devise_for :passengers
+=begin
+  devise_for :passengers, :controllers => { :omniauth_callbacks => "passengers/omniauth_callbacks" }
+  devise_scope :passenger do
+    delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_passenger_session
+  end
   
+  devise_for :passengers, :controllers => { :omniauth_callbacks => "passengers/omniauth_callbacks" }
+
+  devise_scope :passenger do
+    get 'sign_in', :to => 'devise/sessions#new', :as => :new_passenger_session
+    get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_passenger_session
+  end
   
   resource :stops do
     get "stop"
@@ -22,11 +38,11 @@ Rails.application.routes.draw do
   #resources :stops
   #get 'stops/stops'#, :to => "stops/stop", :as => stop 
   get '/stops/:id/stop', to: 'stops#stop'
+=end
   
   
   
-  
-  
+
   
   
   
