@@ -1,7 +1,15 @@
 %h2 Edit Line
 
-= form_tag lines_path(@line), :method => :put do
-
+- unless @line.errors.empty?
+  #warning
+    Errors prevented this line from being #{controller.action_name}d:
+    %ul
+      - @line.errors.full_messages.each do |error|
+      %li= error
+      
+= form_tag line_path(@line), :method => :put do
+  = render :partial => 'line_form'
+=begin
   = label :line, :train, 'Train'
   = text_field :line, 'train'
  
@@ -10,5 +18,5 @@
   
   = label :line, :borough, 'Borough'
   = select :line, :borough, ['The Bronx','Brooklyn', 'Manhattan', 'Staten Island','Queens']
-
+=end
   = submit_tag 'Save Changes'

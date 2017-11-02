@@ -126,7 +126,6 @@ GEM
     multipart-post (2.0.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
-    oauth (0.5.3)
     oauth2 (1.4.0)
       faraday (>= 0.8, < 0.13)
       jwt (~> 1.0)
@@ -138,15 +137,9 @@ GEM
       rack (>= 1.6.2, < 3)
     omniauth-facebook (4.0.0)
       omniauth-oauth2 (~> 1.2)
-    omniauth-oauth (1.1.0)
-      oauth
-      omniauth (~> 1.0)
     omniauth-oauth2 (1.4.0)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
-    omniauth-twitter (1.4.0)
-      omniauth-oauth (~> 1.1)
-      rack
     pg (0.20.0)
     public_suffix (3.0.0)
     rack (1.6.8)
@@ -239,7 +232,6 @@ DEPENDENCIES
   launchy
   omniauth
   omniauth-facebook
-  omniauth-twitter
   pg (~> 0.20.0)
   rails (= 4.2.5)
   sass-rails (~> 5.0)
