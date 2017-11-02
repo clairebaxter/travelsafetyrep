@@ -7,8 +7,6 @@
 <src="app/assets/images/Slide1.jpg" alt="logo not here!" height="42" width="42">
 %h2 NYC Train Lines
 
-%div {:class=>"fb-login-button"}
--#data-max-rows=>"1", data-size=>"large", data-button-type=>"continue_with", data-show-faces=>"true", data-auto-logout-link=>"true", data-use-continue-as=>"true"}
 %table#lines
   %thead
     %tr
@@ -17,7 +15,6 @@
       %th Color
       %th Borough
     %tbody
-      %script(src="/app/assets/javascripts/facebook.js")
       
       - @lines.each do |line|
         %tr
@@ -27,4 +24,4 @@
         %td= line.borough
         %td= link_to "More About The #{line.train}", line_path(line), {:id => "link"}
  
-      %p= link_to 'Add New Train', new_line_path, {:id => "link"}
+%p= link_to 'Add New Train', new_line_path, {:id => "link"}

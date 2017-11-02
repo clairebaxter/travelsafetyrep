@@ -7,10 +7,8 @@ class ApplicationController < ActionController::Base
   def current_passenger
     @current_passenger ||= Passenger.find(session[:passenger_id]) if session[:passenger_id]
   end
-  helper_method :current_passenger
+ 
   
-  def new_session_path(scope)
-    new_passenger_session_path
-  end
+ 
   
 end
