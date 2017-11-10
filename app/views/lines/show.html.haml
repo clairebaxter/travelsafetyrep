@@ -7,19 +7,19 @@
   %li
     Borough:
     = @line.borough
-
-  = image_tag("Ltrain1.png", {:style => "width:400px;"})
-  %br
-  = image_tag("Ltrain2.png", {:style => "width:400px;"})
-
-%h3 Description:
-
+%h2 Description:
 %p#description= @line.description
+
+= image_tag("Ltrain1.png", {:style => "width:400px;"})
+%br
+= image_tag("Ltrain2.png", {:style => "width:400px;"})
+
+
 -#%p= link_to 'Find your stop', stops_path,{:id => "stoplink"}
 %p= link_to 'Edit Info', edit_line_path(@line),{:id => "link"}
 %p= link_to 'Delete', line_path(@line), {:method => :delete,:id => "link"}
 %p= link_to 'Back to lines list', lines_path,{:id => "returnLink", :id => "link"}
 
 
-%input{:type=>"text", :required => true}
-%button.button Confirm Location
+-#%input{:type=>"text", :required => true}
+-#%button.button Confirm Location
