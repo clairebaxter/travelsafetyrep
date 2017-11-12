@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   skip_before_filter :set_current_passenger
   def create
     auth=request.env["omniauth.auth"]
-    passenger=Passenger.where(:provider => auth["provider"], :uid => auth["uid"]) ||
+    passenger=Passenger.find_by(:provider => auth["provider"], :uid => auth["uid"]) ||
       Passenger.create_with_omniauth(auth)
     session[:passenger_id] = passenger.id
     redirect_to lines_path

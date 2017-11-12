@@ -1,5 +1,5 @@
 class Passengers::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  def facebook
+    def facebook
     # You need to implement the method below in your model (e.g. app/models/user.rb)
     @passenger = Passenger.from_omniauth(request.env["omniauth.auth"])
 
@@ -10,10 +10,10 @@ class Passengers::OmniauthCallbacksController < Devise::OmniauthCallbacksControl
       session["devise.facebook_data"] = request.env["omniauth.auth"]
       redirect_to new_passenger_registration_url
     end
-  end
+    end
 
   def failure
-    redirect_to line_path
+    redirect_to root_path
   end
     
 end

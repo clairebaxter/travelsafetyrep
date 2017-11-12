@@ -3,6 +3,6 @@ class Passenger < ActiveRecord::Base
         Passenger.create!(
           :provider => auth["provider"],
           :uid => auth["uid"],
-          :name => author["info"]["name"])
+          :name => auth["info"]["name"])
     end
 end
