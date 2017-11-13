@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
     redirect_to login_path and return unless @current_passenger
   end
   
+  helper_method :current_passenger
+  
   private
   def current_passenger
     @current_passenger ||= Passenger.find(session[:passenger_id]) if session[:passenger_id]
