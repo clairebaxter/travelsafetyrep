@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   delete '/lines.:id' => 'lines#destroy'
   
   get 'auth/:provider/callback' => 'sessions#create'
-  post 'logout' => 'sessions#destroy'
+  get 'logout' => 'sessions#destroy'
   get 'auth/failure' => 'sessions#failure'
   get 'auth/facebook', :as => 'login'
   
