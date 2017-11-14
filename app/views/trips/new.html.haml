@@ -1,11 +1,12 @@
 %h2 Create New Trip
 
+
 = form_tag trips_path, :method => :post do
     = label :trip, :passenger_name, 'Passenger'
-    = text_field :trip, :passenger_name
+    = text_field_tag :trip, :passenger_name
 
     = label :trip, :train, 'Train'
-    = text_field :trip, :train
+    = text_field_tag :trip, :train
     
     = submit_tag 'Save Changes'
     

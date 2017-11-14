@@ -16,6 +16,8 @@ class TripsController < ApplicationController
         params_map = ActiveSupport::HashWithIndifferentAccess.new(params[:trip])
         @trip = Trip.new(params_map)
         @trip.passenger_id = session[:passenger_id]
+        @trip.train = session[:train]
+        @trip.passenger_name = session[:passenger_name]
         if @trip.save
             redirect_to trips_path
             flash[:notice] = "Thank you, #{@trip.passenger_name}, your #{@trip.train} trip was successfully created."

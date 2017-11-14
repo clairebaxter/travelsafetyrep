@@ -3,13 +3,15 @@
 %head
 
 <link rel="stylesheet" type="text/css" href="application.css">
-//%p= link_to "Sign in", login_path, {:id => "login"}
 %h1 URBAN PANCAKE
-<src="app/assets/images/Slide1.jpg" alt="logo not here!" height="42" width="42">
-%h2 NYC Train Lines
 
 %p= link_to 'Sign in with Facebook', login_path, {:id => "login"}
 %p= link_to 'Sign out with Facebook', logout_path, {:id => "logout"}
+
+<src="app/assets/images/Slide1.jpg" alt="logo not here!" height="42" width="42">
+%h2 NYC Train Lines
+
+
 
 %table#lines
   %thead
