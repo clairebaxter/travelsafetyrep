@@ -1,0 +1,7 @@
+%h2 Edit Trip
+   
+= form_tag trip_path(@trip), :method => :put do
+  = render :partial => 'trip_form'
+
+
+  = submit_tag 'Save Changes'

@@ -12,6 +12,14 @@ Rails.application.routes.draw do
   put '/lines.:id' => 'lines#update'
   delete '/lines.:id' => 'lines#destroy'
   
+  get '/trips' => 'trips#index'
+  get '/trips/:id' => 'trips#show'
+  get '/trips/new/newtrip' => 'trips#new'
+  post '/trips' => 'trips#create'
+  get '/trips/:id/edit' => 'trips#edit'
+  put '/trips.:id' => 'trips#update'
+  delete '/trips.:id' => 'trips#destroy'
+  
   get 'auth/:provider/callback' => 'sessions#create'
   get 'logout' => 'sessions#destroy'
   get 'auth/failure' => 'sessions#failure'

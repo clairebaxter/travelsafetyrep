@@ -1,0 +1,12 @@
+%h2 Create New Trip
+
+= form_tag trips_path, :method => :post do
+    = label :trip, :passenger_name, 'Passenger'
+    = text_field :trip, :passenger_name
+
+    = label :trip, :train, 'Train'
+    = text_field :trip, :train
+    
+    = submit_tag 'Save Changes'
+    
+%p= link_to 'Back to trips list', trips_path,{:id => "returnTripLink", :id => "trip"}

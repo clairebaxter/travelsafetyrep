@@ -1,0 +1,17 @@
+-# in app/views/trips/show.html.haml
+%h2 Details about your train trip
+%ul#details
+  %li
+    Passenger:
+    = @trip.passenger
+  %li
+    Train:
+    = @trip.train
+    %li
+    Time:
+    = @trip.timestamps
+
+
+%p= link_to 'Edit Trip', edit_trip_path(@trip),{:id => "trip"}
+%p= link_to 'Delete Trip', trip_path(@trip), {:method => :delete,:id => "trip"}
+%p= link_to 'Back to trips list', trips_path,{:id => "returnTripLink", :id => "trip"}

@@ -1,0 +1,27 @@
+
+%html
+%head
+
+<link rel="stylesheet" type="text/css" href="application.css">
+%h1 URBAN PANCAKE
+<src="app/assets/images/Slide1.jpg" alt="logo not here!" height="42" width="42">
+%h2 NYC Train Trips
+
+%p= link_to 'Create a trip', trips_path, {:id => "trip"}
+
+%table#trips
+  %thead
+    %tr
+      /%th ID
+      %th Passenger
+      %th Train
+      %th Trip Time
+    %tbody
+      
+      - @trips.each do |trip|
+        %tr
+        %td= trip.passenger_name
+        %td= trip.train
+        %td= trip.timestamps
+ 
+%p= link_to 'Add New Trip', '/trips/new'
