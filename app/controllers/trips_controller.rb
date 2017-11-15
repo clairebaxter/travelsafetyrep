@@ -1,4 +1,5 @@
 class TripsController < ApplicationController
+    
     def index
         @passenger = Passenger.find(session[:passenger_id])
         @trips = Trip.where(:passenger_id => @passenger)
@@ -13,17 +14,23 @@ class TripsController < ApplicationController
     end
 
     def create
-        params_map = ActiveSupport::HashWithIndifferentAccess.new(params[:trip])
-        @trip = Trip.new(params_map)
-        @trip.passenger_id = session[:passenger_id]
-        @trip.train = session[:train]
-        @trip.passenger_name = session[:passenger_name]
+        # params_map = ActiveSupport::HashWithIndifferentAccess.new(params[trips_params])
+        # @trip = Trip.new(params_map)
+        # if @trip.save
+        #     redirect_to trips_path
+        #     flash[:notice] = "Thank you, #{@trip.passenger_name}, your #{@trip.train} trip was successfully created."
+        # else 
+        #     render "new"
+        # end
+        @trip = Trip.create!(trip_params)
         if @trip.save
             redirect_to trips_path
-            flash[:notice] = "Thank you, #{@trip.passenger_name}, your #{@trip.train} trip was successfully created."
+            flash[:notice] = "Thank you, #{@passenger}, your #{@trip.train} trip was successfully created."
         else 
             render "new"
         end
+        #flash[:notice] = "Thank you, #{@trip.passenger_name}, your #{@trip.train} trip was successfully created."
+        #redirect_to trips_path
     end
     
     def edit 
@@ -44,6 +51,11 @@ class TripsController < ApplicationController
         @trip.destroy #(params_map)
         flash[:notice] = "Your #{@trip.train} train trip was successfully deleted."
         redirect_to trips_path
+    end
+    
+    private 
+    def trip_params
+        #trip_params.require(:trip).permit(:passenger_name,:train,:timestamps)
     end
     
 end
