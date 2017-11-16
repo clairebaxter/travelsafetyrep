@@ -15,6 +15,7 @@ class LinesController < ApplicationController
     def create
         params_map = ActiveSupport::HashWithIndifferentAccess.new(params[:line])
         @line = Line.new(params_map)
+        #byebug
         if @line.save
             redirect_to lines_path
             flash[:notice] = "#{@line.train} was successfully created."

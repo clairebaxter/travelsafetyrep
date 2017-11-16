@@ -8,10 +8,13 @@
     Train:
     = @trip.train
     %li
-    Time:
+    Departure Time:
     = @trip.timestamps
+    %li
+    Other Passengers on This Trip: 
+    
 
 
-%p= link_to 'Edit Trip', edit_trip_path(@trip),{:id => "trip"}
-%p= link_to 'Delete Trip', trip_path(@trip), {:method => :delete,:id => "trip"}
-%p= link_to 'Back to trips list', trips_path,{:id => "returnTripLink", :id => "trip"}
+%p= link_to 'Edit Trip', edit_trip_path(@trip),{:id => "link"}
+%p= link_to 'Delete Trip', trip_path(@trip), {:method => :delete,:id => "link"}
+%p= link_to 'Back to trips list', trips_path,{:id => "returnTripLink", :id => "link"}

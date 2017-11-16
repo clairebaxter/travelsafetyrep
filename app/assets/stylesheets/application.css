@@ -43,6 +43,10 @@ table {
   font-size: 16px;
   font-weight: 100;
 }
+.flash.notice {
+  color: #F00;
+  background-color: #ffe
+}
 #link{
   color: #466995;
   font-size: 16px;

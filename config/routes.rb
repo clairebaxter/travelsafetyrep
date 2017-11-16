@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
  
   
-  resources :lines
+  resources :lines, :trips
   root :to => redirect('/lines')
   
   
