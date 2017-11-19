@@ -18,14 +18,15 @@ class TripsController < ApplicationController
         params_map = ActiveSupport::HashWithIndifferentAccess.new(params[:trip])
         @trip = Trip.new(params_map)
         #byebug
-        if @trip.save
+        if @trip.valid?
+            @trip.save
             redirect_to trips_path
+            #byebug
             flash[:notice] = "Thank you, #{@trip.passenger_name}, your #{@trip.train} trip was successfully created."
         else 
+            flash[:notice] = @trip.errors.full_messages
             render "new"
         end
-        # @trip = Trip.create!(trip_params)
-        # flash[:notice] = "Thank you, #{@trip.passenger_name}, your #{@trip.train} trip was successfully created."
         #redirect_to trip_path
     end
     

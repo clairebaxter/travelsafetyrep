@@ -2,8 +2,9 @@ Rails.application.routes.draw do
  
   
   resources :lines, :trips
-  root :to => redirect('/lines')
+  root :to => "welcome#show"
   
+  get 'welcome/show'
   
   get '/lines/:id' => 'lines#show'
   get '/lines/new' => 'lines#new'

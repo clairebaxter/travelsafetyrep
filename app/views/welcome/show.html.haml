@@ -1,0 +1,11 @@
+<link rel="stylesheet" type="text/css" href="application.css">
+
+= image_tag("/assets/logo.jpg", size: "400x300")
+    
+%h1 URBAN PANCAKE
+
+%p{:id => "welcome"}= 'We aim to help provide safe travel home for city dwellers by facilitating travel together.'
+%p= link_to 'Sign in with Facebook', login_path, {:id => "login"}
+
+%p= link_to 'Add New Trip', trips_new_newtrip_path,{:id => "link"}
+%p= link_to 'Back to lines list', lines_path,{:id => "returnLink", :id => "link"}

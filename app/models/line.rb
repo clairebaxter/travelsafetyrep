@@ -1,4 +1,8 @@
 class Line < ActiveRecord::Base
+    validates :train, presence: {message: "Please name the train."}
+    validates :description, presence: {message: "Please write a description."}
+    validates :description, length: { in: 5..50}
+    
     #def self.all_colors ; %w['Blue', 'Brown', 'Gray', 'Green', 'Light Green', 'Orange', 'Yellow', 'Purple', 'Red'] ; end #  shortcut: array of strings
         #validates :train, :presence => true
         #validates :borough, :presence => true

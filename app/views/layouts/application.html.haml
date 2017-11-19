@@ -1,17 +1,35 @@
 !!! 5
 %html
   %head
-    %title UrbanPancake!
-    = stylesheet_link_tag 'application'
-    = javascript_include_tag 'application'
-    = csrf_meta_tags
-    = image_tag("/assets/logo.jpg", size: "400x300")
-  %body
-    - if flash[:notice]
-      #notice.message= flash[:notice]
-    - elsif flash[:warning]
-      #warning.message= flash[:warning]
-    #main
-      = yield
+  %nav
+    %a{:href => 'http://ruby-lang.org'}>Ruby
+    %a{:href => "#"}>Home
+    %a{:href => "/lines"}>Lines
+    %a{:href => "/trips"}>Trips
+    %a{:href => "#"}>Account
+  
+/        <!--PLEASE DON'T REMOVE THE session[:testing?] FROM BELOW -->
+/ /       <!--IT IS USED IN THE CUCUMBER TESTING TO MAKE A FAKE USER-->
+/  /      <!--WITHOUT IT, THE CUCUMBER TESTS WILL FAIL!             -->
+/        <% if session[:logged_in] and session[:testing?] != true %>
+
+
+  
+%title UrbanPancake!
+= stylesheet_link_tag 'application'
+= javascript_include_tag 'application'
+= csrf_meta_tags
+%p= link_to 'Sign Out', logout_path, {:id => "logout"}
+  
+%body
+  
+  - if flash[:notice]
+    #notice.message= flash[:notice]
+  - elsif flash[:errors]
+    #errors.message= flash[:errors]
+  - elsif flash[:warning]
+    #warning.message= flash[:warning]
+  #main
+    = yield
       
     
