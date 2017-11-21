@@ -11,8 +11,4 @@ class StopsController < ApplicationController
         
     end
     
-    #def stopusers
-     #   id = params[:id]
-      #  @stops = Stop.find(id)
-    #end
 end

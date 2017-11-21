@@ -1,4 +1,5 @@
 class TripsController < ApplicationController
+    before_action :force_log_in
     def index
         #@trips = Trip.all
         #@passenger = Passenger.find(session[:passenger_id])

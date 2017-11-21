@@ -1,4 +1,7 @@
 class Line < ActiveRecord::Base
+    
+    #paginates_per 5
+    
     validates :train, presence: {message: "Please name the train."}
     validates :description, presence: {message: "Please write a description."}
     validates :description, length: { in: 5..50}

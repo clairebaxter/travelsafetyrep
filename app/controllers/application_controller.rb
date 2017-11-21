@@ -16,7 +16,14 @@ class ApplicationController < ActionController::Base
   def current_passenger
     @current_passenger ||= Passenger.find(session[:passenger_id]) if session[:passenger_id]
   end
- 
+  private
+  
+  def force_log_in
+    unless session[:logged_in]
+      flash[:notice] = "Please log in."
+      redirect_to welcome_show_url
+    end
+  end
   
  
   

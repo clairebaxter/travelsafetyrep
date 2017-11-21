@@ -1,6 +1,9 @@
 class LinesController < ApplicationController
+    before_action :force_log_in
+    
     def index
         @lines = Line.all
+        #@lines = Line.order(:train).page(params[:page]).per(9)
     end
     
     def show

@@ -6,11 +6,13 @@ class SessionsController < ApplicationController
     passenger=Passenger.find_by(:provider => auth["provider"], :uid => auth["uid"]) ||
       Passenger.create_with_omniauth(auth)
     session[:passenger_id] = passenger.id
+    session[:logged_in] = true
     redirect_to lines_path, :notice => "Welcome, #{passenger.name}!"
   end
   def destroy
     session.delete(:passenger_id)
+    session[:logged_in] = nil
     flash[:notice] = 'Logged out successfully.'
-    redirect_to lines_path, :notice => "Signed out!"
+    redirect_to welcome_show_url, :notice => "Signed out!"
   end
 end

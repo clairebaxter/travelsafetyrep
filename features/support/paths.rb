@@ -15,9 +15,6 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-    when "the UrbanPancake home page" then "/lines"
-    #when "Add New Train" then "/lines/new"  
-    when "the Create New Line page" then "/lines/new"
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

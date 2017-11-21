@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   resources :lines, :trips
   root :to => "welcome#show"
-  
+
   get 'welcome/show'
   
   get '/lines/:id' => 'lines#show'

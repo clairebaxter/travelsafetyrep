@@ -2,11 +2,13 @@
 %html
   %head
   %nav
-    %a{:href => 'http://ruby-lang.org'}>Ruby
-    %a{:href => "#"}>Home
-    %a{:href => "/lines"}>Lines
-    %a{:href => "/trips"}>Trips
-    %a{:href => "#"}>Account
+    <a href="/">Home</a>
+    <a href="/lines">Lines</a>
+    <a href="/trips">Trips</a>
+    <a href="#">Account</a>
+    
+    <a href="/auth/facebook">Log In</a>
+    <a href="/logout">Log Out</a>
   
 /        <!--PLEASE DON'T REMOVE THE session[:testing?] FROM BELOW -->
 / /       <!--IT IS USED IN THE CUCUMBER TESTING TO MAKE A FAKE USER-->
@@ -19,8 +21,7 @@
 = stylesheet_link_tag 'application'
 = javascript_include_tag 'application'
 = csrf_meta_tags
-%p= link_to 'Sign Out', logout_path, {:id => "logout"}
-  
+
 %body
   
   - if flash[:notice]
