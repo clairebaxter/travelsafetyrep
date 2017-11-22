@@ -2,14 +2,13 @@
 %html
   %head
   %nav
-    <a href="/">Home</a>
-    <a href="/lines">Lines</a>
-    <a href="/trips">Trips</a>
-    <a href="#">Account</a>
-    
-    <a href="/auth/facebook">Log In</a>
-    <a href="/logout">Log Out</a>
-  
+    //= link_to 'Home', welcome_show_url, {:id => "link"}
+    = link_to 'Lines', "/lines", {:id => "link"}
+    = link_to 'Trips', trips_new_newtrip_path, {:id => "link"}
+    //= link_to 'Account', "#", {:id => "link"}
+    //= link_to 'Log In', "/auth/facebook", {:id => "link"}
+    //= link_to 'Log Out', logout_path, {:id => "link"}
+
 /        <!--PLEASE DON'T REMOVE THE session[:testing?] FROM BELOW -->
 / /       <!--IT IS USED IN THE CUCUMBER TESTING TO MAKE A FAKE USER-->
 /  /      <!--WITHOUT IT, THE CUCUMBER TESTS WILL FAIL!             -->

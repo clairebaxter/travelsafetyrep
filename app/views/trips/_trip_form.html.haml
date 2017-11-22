@@ -7,7 +7,7 @@
 -# in _line_form.html.haml (the partial)
 
 = label :trip, :passenger_name, 'Passenger'
-= text_field :trip, :passenger_name
+= text_field :trip, #{current_passenger.name}
 
 = label :trip, :train, 'Train'
 = select :trip, :train, ['1', '2','3','4','5','6','7','A','C','E','B','D','G','J','F','L','N','Q','R','W','S']

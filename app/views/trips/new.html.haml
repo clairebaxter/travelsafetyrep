@@ -1,6 +1,5 @@
+%p= link_to 'Log Out', logout_path, {:id => "link"}
 %h2 Create New Trip
-
-
 = form_tag trips_path, :method => :post do
     = label :trip, :passenger_name, 'Passenger'
     = text_field :trip, :passenger_name
