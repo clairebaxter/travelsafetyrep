@@ -10,7 +10,7 @@
     = label :trip, :timestamps, 'Departure Time'
     = select :trip, :timestamps, ['1','2','3','4','5','6','7','8','9','10','11', '12','13','14','15','16','17','18','19','20','21','22','23','24']
 
-    = submit_tag 'Save Changes'
+    = submit_tag("Save Changes", :style => "color:black;")
     
 %p= link_to 'Back to trips list', trips_path,{:id => "returnTripLink", :id => "link"}
 %p= link_to 'Back to all lines list', lines_path,{:id => "returnLink", :id => "link"}

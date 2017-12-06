@@ -13,6 +13,6 @@
     = label :line, :description, 'Description'
     = text_field :line, :description
     
-    = submit_tag 'Save Changes'
+    = submit_tag("Save Changes", :style => "color:black")
     
 %p= link_to 'Back to lines list', lines_path,{:id => "returnLink", :id => "link"}

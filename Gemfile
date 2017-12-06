@@ -13,6 +13,9 @@ gem 'kaminari', '~> 0.16.1'
 gem 'omniauth-facebook'
 gem 'omniauth'
 
+gem 'devise'
+gem 'rdoc'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -70,4 +73,3 @@ end
 
 end
 
-gem 'devise'

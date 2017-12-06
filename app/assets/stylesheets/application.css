@@ -14,9 +14,9 @@
  *= require_self
  */
 body {
-  background-color: #add8e6;
+  background-color: #000025;
   margin: 30px auto;
-  color: #466995;
+  color: #ffffff;
   text-align: center;
   font-family: 'Oswald', sans-serif;
 }
@@ -38,17 +38,20 @@ li{
   text-align: center;
 }
 table {
-  color: #466995;
+  color: #ffffff;
   margin: 0px auto;
   font-size: 16px;
   font-weight: 100;
+}
+#submit_tag {
+  color: #000000;
 }
 .flash.notice {
   color: #F00;
   background-color: #ffe
 }
 #link{
-  color: #466995;
+  color: #a8dae2;
   font-size: 16px;
   font-weight: 300;
   text-decoration: none;
@@ -71,6 +74,17 @@ table {
 #welcome{
   color:#FFF;
   font-size: 24px;
-  
-
 }
+  
+  
+/*@font-face {*/
+/*	font-family: 'Anivers_Regular';*/
+/*	src:url('fonts/Anivers_Regular.otf');*/
+/*	src:url('fonts/Anivers_Regular.otf?#iefix') format('embedded-opentype'),*/
+/*		url('fonts/icofonts.ttf') format('truetype'),*/
+/*		url('fonts/icofonts.woff') format('woff'),*/
+/*		url('fonts/icofonts.svg#icofonts') format('svg');*/
+/*	font-weight: normal;*/
+/*	font-style: normal;*/
+/*}*/
+

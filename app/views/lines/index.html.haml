@@ -1,8 +1,14 @@
 %html
 %head
+
+
 %nav
   = link_to 'Log Out', logout_path, {:id => "link"}
 <link rel="stylesheet" type="text/css" href="application.css">
+
+.container-fluid
+%h1 My First Bootstrap Page
+%p This is some text.
 
 
 %h1 URBAN PANCAKE
@@ -10,12 +16,9 @@
 <src="app/assets/images/Slide1.jpg" alt="logo not here!" height="42" width="42">
 %h2 NYC Train Lines
 
-//%p= link_to 'Sign Out', logout_path, {:id => "logout"}
-
 %table#lines
   %thead
     %tr
-      /%th ID
       %th Train
       %th Color
       %th Borough
@@ -23,7 +26,6 @@
       
       - @lines.each do |line|
         %tr
-        /%td= line.id
         %td= line.train
         %td= line.color
         %td= line.borough
