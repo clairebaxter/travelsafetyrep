@@ -10,6 +10,10 @@ gem 'pg', '~> 0.20.0'
 # Adds kaminari
 gem 'kaminari', '~> 0.16.1'
 
+#adds wice_grid for table sorting and pagination
+gem "wice_grid", '3.6.0.pre4'
+gem 'font-awesome-sass',  '~> 4.3'
+
 gem 'omniauth-facebook'
 gem 'omniauth'
 
@@ -33,7 +37,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
+gem 'rails_12factor', group: :production
 
 gem 'html2haml'
 

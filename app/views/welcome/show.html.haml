@@ -1,7 +1,11 @@
 <link rel="stylesheet" type="text/css" href="application.css">
-
-= image_tag("/assets/logo2.jpg", size: "400x300")
-    
-%h1 URBAN PANCAKE
-
-%p{:id => "welcome"}= 'We aim to help provide safe travel home for city dwellers by facilitating travel together.'
+%html
+%head
+<body>
+-#= image_tag("/assets/logo2.jpg", size: "400x300")
+=image_tag("logo2.jpg", size: "400x300")
+-#image_tag("logo.jpg", size: "400x300")
+-# /%nav
+-#  = link_to 'Log In', "/auth/facebook", {:id => "link"}
+-#!!! 5
+%p{:id => "welcome"}= 'We aim to help provide a safe journey home for city dwellers by facilitating travel together.'

@@ -1,3 +1,4 @@
+=begin
 require 'uri'
 require 'cgi'
 require File.expand_path(File.join(File.features(addTrain.feature), "..", "support", "paths"))
@@ -93,3 +94,5 @@ end
 And /^(?:|I )should see \/([^\/]*)\/$/ do |successfully|
   successfully = Regexp.new(successfully)
   end
+=end
+  

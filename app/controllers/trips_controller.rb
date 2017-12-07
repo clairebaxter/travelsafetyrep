@@ -5,15 +5,28 @@ class TripsController < ApplicationController
         #@passenger = Passenger.find(session[:passenger_id])
         @trips = Trip.where(:passenger_id => @passenger)
     end
-    
+
     def show
-        @trip = Trip.find(params[:id])
+        id = params[:id]
+        @trip = Trip.find(id)
     end
     
     def newtrip 
         @trip = Trip.new
     end
 
+    def join
+        @trip = Trip.find params[:id]
+        #params_map = ActiveSupport::HashWithIndifferentAccess.new(params[:trip])
+        #@passenger = Passenger.find params[:id]
+        
+        @passenger = Passenger.find params[:passenger_id]
+        byebug
+        @trip.passenger_name = @trip.passenger_name << @passenger
+        flash[:notice] = "You have successfully joined this #{@trip.train} trip."
+        redirect_to trips_path
+    end
+    
     def create
         
         params_map = ActiveSupport::HashWithIndifferentAccess.new(params[:trip])
@@ -37,6 +50,7 @@ class TripsController < ApplicationController
     
     def update
         @trip = Trip.find params[:id]
+        #byebug
         params_map = ActiveSupport::HashWithIndifferentAccess.new(params[:trip])
         @trip.update(params_map)
         #byebug

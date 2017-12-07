@@ -2,4 +2,4 @@
 
 = form_tag line_path(@line), :method => :put do
   = render :partial => 'line_form'
-  = submit_tag("Save Changes", :style => "color:black")
+  = submit_tag("Save Changes", :style => "color:black",data: { confirm: "Are you sure?" })

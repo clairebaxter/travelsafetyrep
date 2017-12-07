@@ -1,27 +1,59 @@
 %html
 %head
-%nav
-  = link_to 'Log Out', logout_path, {:id => "link"}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+
+<body>
+-#
+  %nav
+  %nav
+  = link_to 'Log Out', logout_path, {:id => "link"}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="application.css">
-<h1> URBAN PANCAKE</h1>
+
 <src="app/assets/images/Slide1.jpg" alt="logo not here!" height="42" width="42">
-<h2> NYC Train Trips</h2>
+
+
+<div class="container">
+<h2> NYC Train Trips</h2>        
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Passenger</th>
+<th>Train</th>
+<th>Departure Time</th>
+</tr>
+</thead>
+<tbody>
+/<table>#trips
+/- @trips.each do |trip|
+/<tr>
+/<td>= trip.passenger_name</td>
+/<td>= trip.train</td>
+/<td>= trip.timestamps</td>
+/</tr>
+/</tbody>
+/</table>
+/</div>
+
 
 %table#trips
-  %thead
-    %tr
-      %th Passenger
-      %th Train
-      %th Departure Time
-    %tbody
       
-      - @trips.each do |trip|
-        %tr
-        %td= trip.passenger_name
-        %td= trip.train
-        %td= trip.timestamps
-        %td= link_to "More About The #{trip.train} Trip", trip_path(trip), {:id => "link"}
- 
+  - @trips.each do |trip|
+    %tr
+      %td= trip.passenger_name
+      %td= trip.train
+      %td= trip.timestamps
+      %td= link_to "More About The #{trip.train} Trip", trip_path(trip), {:id => "link"}
+
 %p= link_to 'Add New Trip', trips_new_newtrip_path,{:id => "link"}
 %p= link_to 'Back to lines list', lines_path,{:id => "returnLink", :id => "link"}
+

@@ -1,9 +1,10 @@
 -# in app/views/trips/show.html.haml
+
 %h2 Details about your train trip
 %ul#details
   %li
     Passenger:
-    = @trip.passenger_name
+    = Passenger.name
     %li
     Train:
     = @trip.train
@@ -11,10 +12,10 @@
     Departure Time:
     = @trip.timestamps
     %li
-    Other Passengers on This Trip: 
+    All Passengers on This Trip: 
+    = @trip.passenger_name
     
-
-
+%p= link_to 'Join Trip', trip_path(@trip),{:method => :join, :id => "link"}
 %p= link_to 'Edit Trip', edit_trip_path(@trip),{:id => "link"}
 %p= link_to 'Delete Trip', trip_path(@trip), {:method => :delete,:id => "link"}
 %p= link_to 'Back to trips list', trips_path,{:id => "returnTripLink", :id => "link"}
