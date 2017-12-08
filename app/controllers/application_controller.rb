@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
     unless session[:logged_in]
       flash[:notice] = "Please log in."
       redirect_to welcome_show_url
+      
     end
   end
   

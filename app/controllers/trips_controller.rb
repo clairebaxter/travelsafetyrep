@@ -21,7 +21,7 @@ class TripsController < ApplicationController
         #@passenger = Passenger.find params[:id]
         
         @passenger = Passenger.find params[:passenger_id]
-        byebug
+        #byebug
         @trip.passenger_name = @trip.passenger_name << @passenger
         flash[:notice] = "You have successfully joined this #{@trip.train} trip."
         redirect_to trips_path
