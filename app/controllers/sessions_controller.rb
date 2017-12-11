@@ -13,6 +13,10 @@ class SessionsController < ApplicationController
     session.delete(:passenger_id)
     session[:logged_in] = nil
     flash[:notice] = 'Logged out successfully.'
-    redirect_to welcome_show_url, :notice => "Signed out!"
+    redirect_to root_path, :notice => "Signed out!"
+  end
+  
+  def show
+    byebug
   end
 end

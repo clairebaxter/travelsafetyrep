@@ -29,7 +29,7 @@
     <ul class="nav navbar-nav">
       <li <% if current_page?(lines_path) or  current_page?(lines_new_path)%> class="active" <% end %> ><%= link_to 'Lines', lines_path %></li>
       <li <% if current_page?(trips_path) or current_page?(trips_new_newtrip_path) %> class="active" <% end %>><%= link_to 'Trips', trips_path %></li>
-      <li><%= link_to 'Account', "#" %></li>
+      <li <% if current_page?(account_path) %> class="active" <% end %> ><%= link_to 'Account', account_path %></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li>

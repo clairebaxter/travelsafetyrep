@@ -8,7 +8,7 @@ gem 'rails', '4.2.5'
 gem 'pg', '~> 0.20.0'
 
 # Adds kaminari
-gem 'kaminari', '~> 0.16.1'
+gem 'kaminari'
 
 #adds wice_grid for table sorting and pagination
 gem "wice_grid", '3.6.0.pre4'

@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+  @import "wice_grid";
+  @import "font-awesome-sprockets";
+  @import "font-awesome";
+  
 body {
   background-color: #000025!important;
   margin: 30px auto;
@@ -56,7 +60,9 @@ table {
   font-size: 16px;
   font-weight: 100;
 }
-
+button {
+  color: black;
+}
 #submit_tag {
   color: #000000;
 }

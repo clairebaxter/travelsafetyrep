@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20171114222035) do
 
   create_table "trips", force: :cascade do |t|
     t.string   "Train Line"
-    t.string   "Passenger"
+    t.string   "passenger"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "passenger_id"

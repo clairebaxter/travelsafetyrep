@@ -3,7 +3,8 @@ class TripsController < ApplicationController
     def index
         #@trips = Trip.all
         #@passenger = Passenger.find(session[:passenger_id])
-        @trips = Trip.where(:passenger_id => @passenger)
+        #@trips = Trip.where(:passenger_id => @passenger)
+        @trips = Trip.order(:passenger_name).page params[:page]
     end
 
     def show
@@ -19,9 +20,9 @@ class TripsController < ApplicationController
         @trip = Trip.find params[:id]
         #params_map = ActiveSupport::HashWithIndifferentAccess.new(params[:trip])
         #@passenger = Passenger.find params[:id]
-        
+        byebug
         @passenger = Passenger.find params[:passenger_id]
-        #byebug
+        byebug
         @trip.passenger_name = @trip.passenger_name << @passenger
         flash[:notice] = "You have successfully joined this #{@trip.train} trip."
         redirect_to trips_path

@@ -14,7 +14,7 @@ if defined?(Wice::Defaults)
 
   # If REUSE_LAST_COLUMN_FOR_FILTER_ICONS is true and the last column doesn't have any filter and column name, it will be used
   # for filter related icons (filter icon, reset icon, show/hide icon), otherwise an additional table column is added.
-  Wice::Defaults::REUSE_LAST_COLUMN_FOR_FILTER_ICONS = true
+  Wice::Defaults::REUSE_LAST_COLUMN_FOR_FILTER_ICONS = false
 
   # The label of the first option of a custom dropdown list meaning 'All items'
   Wice::Defaults::CUSTOM_FILTER_ALL_LABEL = '--'

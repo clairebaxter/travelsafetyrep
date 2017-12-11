@@ -2,8 +2,12 @@ class LinesController < ApplicationController
     before_action :force_log_in
     
     def index
-        @lines = Line.all
+        #@lines = Line.all
+        @lines = Line.order(:train).page params[:page]
         #@lines = Line.order(:train).page(params[:page]).per(9)
+        
+        @lines_grid = initialize_grid(Line,
+        per_page: 5 )
     end
     
     def show
@@ -11,7 +15,7 @@ class LinesController < ApplicationController
         @line = Line.find(id)
     end
     
-    def new 
+    def new
         @line = Line.new
     end
 
