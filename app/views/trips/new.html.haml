@@ -1,4 +1,3 @@
-%p= link_to 'Log Out', logout_path, {:id => "link"}
 %h2 Create New Trip
 = form_tag trips_path, :method => :post do
     = label :trip, :passenger_name, 'Passenger'
@@ -12,5 +11,5 @@
 
     = submit_tag("Save Changes", :style => "color:black;")
     
-%p= link_to 'Back to trips list', trips_path,{:id => "returnTripLink", :id => "link"}
-%p= link_to 'Back to all lines list', lines_path,{:id => "returnLink", :id => "link"}
+%p= link_to 'Back to trips list', trips_path,{:class => "link"}
+%p= link_to 'Back to all lines list', lines_path,{:class => "link"}

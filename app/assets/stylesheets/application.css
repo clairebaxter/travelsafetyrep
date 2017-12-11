@@ -193,7 +193,9 @@ table {
      width:100%;
      padding:0;
   }
-
+.current_page{
+  text-transform: uppercase;
+}
 }
 
 

@@ -1,31 +1,6 @@
--# in app/views/trips/show.html.haml
-<link rel="icon" href="pancake.ico"/>
-<title>Urban Pancake</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="application.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+
 <body>
 
-<nav class="navbar navbar-default">
-<div class="container-fluid">
-<div class="navbar-header">
-<a class="navbar-brand" href="https://urbanpancake-aburns.c9users.io/welcome/show">Urban Pancake</a>
-</div>
-<ul class="nav navbar-nav">
-<li class="active"><a href="https://urbanpancake-aburns.c9users.io/welcome/show">Home</a></li>
-<li><a href="https://urbanpancake-aburns.c9users.io/lines">Lines</a></li>
-<li><a href="https://urbanpancake-aburns.c9users.io/trips">Trips</a></li>
-<li><a href="#">Account</a></li>
-</ul>
-<ul class="nav navbar-nav navbar-right">
-<li><a href="https://urbanpancake-aburns.c9users.io/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-</ul>
-</div>
-</nav>
 //= require wice_grid
 <body>
 </nav>
@@ -48,7 +23,7 @@
     All Passengers on This Trip: 
     = @trip.passenger_name
     
-%p= link_to 'Join Trip', trip_path(@trip),{:method => :join, :id => "link"}
-%p= link_to 'Edit Trip', edit_trip_path(@trip),{:id => "link"}
-%p= link_to 'Delete Trip', trip_path(@trip), {:method => :delete,:id => "link"}
-%p= link_to 'Back to trips list', trips_path,{:id => "returnTripLink", :id => "link"}
+%p= link_to 'Join Trip', trip_path(@trip),{:method => :join, :class => "link"}
+%p= link_to 'Edit Trip', edit_trip_path(@trip),{:class => "link"}
+%p= link_to 'Delete Trip', trip_path(@trip), {:method => :delete,:class => "link"}
+%p= link_to 'Back to trips list', trips_path,{:class => "link"}

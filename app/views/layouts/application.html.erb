@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Lobster+Two|Permanent+Marker" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Calligraffitti" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+  <title>UrbanPancake</title>
+  
+  <link rel="icon" href="pancake.ico"/>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="application.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    <a><%= link_to 'Urban Pancake', root_path, :class => 'navbar-brand'%></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li <% if current_page?(lines_path) or  current_page?(lines_new_path)%> class="active" <% end %> ><%= link_to 'Lines', lines_path %></li>
+      <li <% if current_page?(trips_path) or current_page?(trips_new_newtrip_path) %> class="active" <% end %>><%= link_to 'Trips', trips_path %></li>
+      <li><%= link_to 'Account', "#" %></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+            
+        <!--Note: "active" tab not working-->
+            
+        <!--Had to move this, probably not a 1-1 transfer though..-->
+            
+        <!--PLEASE DON'T REMOVE THE session[:testing?] FROM BELOW -->
+        <!--IT IS USED IN THE CUCUMBER TESTING TO MAKE A FAKE USER-->
+        <!--WITHOUT IT, THE CUCUMBER TESTS WILL FAIL!             -->
+        <% if session[:logged_in] and session[:testing?] != true and current_user%>
+          <a href="<%= lines_path(current_user) %>/" <% if current_page?(lines_path(current_user)) %> class="uk-active" <% end %> >
+        <% else %>
+          <a href="<%= lines_path %>" <% if current_page?(lines_path) %> class="uk-active" <% end %> >
+        <% end %>
+        <!--trying to fix-->
+        Hi, 
+          <% if current_user %>
+            <%= current_user.name.split(" ")[0] %> 
+          <% else %>
+            GUEST
+          <% end %>  
+          </a>
+          <div class="uk-navbar-dropdown" uk-dropdown="pos: bottom-right">
+            <%#= render :partial => '/sessions/login_section' %>
+          </div>
+      </li>
+      <li>
+        <% if session[:logged_in] and session[:testing?] != true and current_user%>
+          <%= link_to ' Logout', logout_path, :class => 'glyphicon glyphicon-log-out'%>
+        <%else %>
+          <li><%= link_to ' Login', login_path, :class => 'glyphicon glyphicon-log-in'%></li>
+        <%end%>
+      </li>
+    </ul>
+  </div>
+</nav>
+  </header>
+  <main>
+    <%# PLEASE DON'T REMOVE THE session[:testing?] FROM BELOW%>
+    <%#--IT IS USED IN THE CUCUMBER TESTING TO MAKE A FAKE USER%>
+    <%#--WITHOUT IT, THE CUCUMBER TESTS WILL FAIL!%>
+
+<% if session[:logged_in] and session[:testing?] != true %>
+  <%end%>
+
+  
+
+<%= stylesheet_link_tag 'application'%>
+<%= javascript_include_tag 'application'%>
+<%= csrf_meta_tags%>
+
+
+  <!-- Displays flash message on each page -->
+      <% flash.each do |key, value| %>
+        <!-- If the key is the :errors symbol, then display all the messages -->
+        <!-- that were stored in the hash -->
+        <% if key == "errors" %>
+          <div class="uk-alert uk-alert-danger">
+          <% value.each do |k, v| %>
+            <p><%= k.capitalize %>
+            <!-- Stop at length-1 because we only want 'and' between messages -->
+            <% for i in 0...(v.length-1) %>
+              <%= v[i] %> and
+            <% end %>
+            <!-- Display the final error message -->
+            <%= v[v.length-1] %></p>
+          <% end %>
+          </div>
+        <% else %>
+          <div class="uk-alert uk-alert-<%= key %>"><%= value %></div>
+        <% end %>
+      <% end %>
+  
+  <%= yield%>
+  </main>
+
+</body>      
+</html>

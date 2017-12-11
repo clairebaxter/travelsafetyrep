@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+<src="app/assets/images/Slide1.jpg" alt="logo not here!" height="42" width="42">
+
+
+<div class="container">
+  <table class="table table-bordered">
+    <h2> NYC Train Trips</h2>        
+      <thead>
+        <tr>
+          <th>Passenger</th>
+          <th>Train</th>
+          <th>Departure Time</th>
+        </tr>
+      </thead>
+      
+      <tbody>  
+        <%@trips.each do |trip|%>
+          <tr>
+            <td><%= trip.passenger_name%></td>
+            <td><%= trip.train%></td>
+            <td><%=link_to "More About The #{trip.train} Trip", trip_path(trip),:class => 'link'%></td> 
+          </tr>
+        <%end%>
+      </tbody>
+    
+</div>
+<p><%= link_to 'Add New Trip', trips_new_newtrip_path,:class => "link" %></p>
+<p><%= link_to 'Back to lines list', lines_path, :class => "link"%><p/>
+
+  
+</body>
+</html>
