@@ -57,7 +57,6 @@ table {
   font-weight: 100;
 }
 
-
 #submit_tag {
   color: #000000;
 }
@@ -65,26 +64,16 @@ table {
   color: #F00;
   background-color: #ffe
 }
-#link{
+.link {
   color: #a8dae2;
   font-size: 30px;
   font-weight: 300;
   text-decoration: none;
 }
 
-#link:hover {
+.link:hover {
   color: #FFF;
-}
-#returnLink{
-  text-align:left;
-}
-
-#login,#logout{
-  color: #FFF;
-  font-size: 24px;
-  font-weight: 300;
   text-decoration: none;
-  font-family: "Segoe UI", 'Arial', 'sans-serif';
 }
 
 #welcome{

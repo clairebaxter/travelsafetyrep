@@ -68,7 +68,7 @@ class TripsController < ApplicationController
     
     private 
         def trip_params
-    params.require(:trip).permit(:passenger_name,:train,:timestamps)
-    end
+            params.require(:trip).permit(:passenger_name,:train,:timestamps)
+        end
     
 end
