@@ -1,14 +1,12 @@
-<link rel="stylesheet" type="text/css" href="application.css">
-%html
 <!DOCTYPE html>
 <html lang="en">
-%head
+
 <link rel="icon" href="pancake.ico"/>
 <title>Urban Pancake</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="application.css">
+<link rel="stylesheet" type="text/css" href="application.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Lobster+Two|Permanent+Marker" rel="stylesheet">
@@ -18,24 +16,19 @@
 <nav class="navbar navbar-default">
 <div class="container-fluid">
 <div class="navbar-header">
-<a class="navbar-brand" href="https://urbanpancake-aburns.c9users.io/welcome/show">Urban Pancake</a>
+<a><%= link_to 'Urban Pancake', root_path, :class => 'navbar-brand'%></a>
 </div>
 <ul class="nav navbar-nav">
 </ul>
 <ul class="nav navbar-nav navbar-right">
-<li><a href="https://urbanpancake-aburns.c9users.io/auth/facebook"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-
+<li><%= link_to ' Login', login_path, :class => 'glyphicon glyphicon-log-in'%></li>
 </ul>
 </div>
 </nav>
-//= require wice_grid
+<%# = require wice_grid %>
 </head>
 </nav>
-<body>
--#= image_tag("/assets/logo2.jpg", size: "400x300")
-=image_tag("logo2.jpg", size: "400x300")
--#image_tag("logo.jpg", size: "400x300")
--# /%nav
--#  = link_to 'Log In', "/auth/facebook", {:id => "link"}
--#!!! 5
-%p{:id => "welcome"}= 'We aim to help provide a safe journey home for city dwellers by facilitating travel together.'
+<%=image_tag("logo2.jpg", size: "400x300")%>
+</body>
+
+<p id = "welcome">We aim to help provide a safe journey home for city dwellers by facilitating travel together.</p>
