@@ -18,7 +18,7 @@ body {
   margin: 30px auto;
   color: #ffffff!important;
   text-align: center;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Righteous', cursive!important;
 }
 input, select, textarea{
     color: #000000;
@@ -90,14 +90,19 @@ table {
 #welcome{
   color:#FFF;
   font-size: 24px;
-  font-family: "Segoe UI", 'Arial', 'sans-serif';
-  
+  font-family: 'Calligraffitti', cursive;
+  padding-top: 20px;
+}
+.flash {
+  font-size: 24px;
+  font-family: 'Calligraffitti', cursive;
+  color: red;
 }
   
   
 .navbar.navbar-default {
   background-color: #000025;
-  font-size: 20px;
+  font-size: 24px;
   border-top: 1px solid #000025;
   border-bottom: 1px solid #ffffff;
   border-left: 1px solid #000025;

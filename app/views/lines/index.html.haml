@@ -1,11 +1,6 @@
 
 %html
-%head 
-
--#
-  %nav
-  = link_to 'Log Out', logout_path, {:id => "link"}
-  <link rel="stylesheet" type="text/css" href="application.css">
+%head
 
 .container-fluid
 
@@ -16,7 +11,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="application.css">
+<link rel="stylesheet" type="text/css" href="application.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -25,16 +20,16 @@
 <nav class="navbar navbar-default">
 <div class="container-fluid">
 <div class="navbar-header">
-<a class="navbar-brand" href="https://urbanpancake-aburns.c9users.io/welcome/show">Urban Pancake</a>
+<a class="navbar-brand" href="/welcome/show">Urban Pancake</a>
 </div>
 <ul class="nav navbar-nav">
 
-<li><a href="https://urbanpancake-aburns.c9users.io/lines">Lines</a></li>
-<li><a href="https://urbanpancake-aburns.c9users.io/trips">Trips</a></li>
+<li><a href="/lines">Lines</a></li>
+<li><a href="/trips">Trips</a></li>
 <li><a href="#">Account</a></li>
 </ul>
 <ul class="nav navbar-nav navbar-right">
-<li><a href="https://urbanpancake-aburns.c9users.io/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+<li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 </ul>
 </div>
 </nav>
@@ -64,28 +59,18 @@
 </tr>
 </thead>
 <tbody>
-
-
-
-/%thead
-/%tr
-/<th>Train</th>
-/<th>Color</th>
-/<th>Borough</th>
+- @lines.each do |line|
+  %tr
+    %td= line.train
+    %td= line.color
+    %td= line.borough
+    %td= link_to "More About The #{line.train}", line_path(line), {:id => "link"}
+</tbody>
     
-/%tbody
-%table#lines  
-  - @lines.each do |line|
-    %tr
-      %td= line.train
-      %td= line.color
-      %td= line.borough
-      %td= link_to "More About The #{line.train}", line_path(line), {:id => "link"}
  
-</div>
- 
+
 %p= link_to 'Add New Train', new_line_path, {:id => "link"}
 %p= link_to 'Add New Trip', trips_new_newtrip_path,{:id => "link"}
 
-
+</div>
 
