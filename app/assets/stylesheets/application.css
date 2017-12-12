@@ -20,9 +20,9 @@
 body {
   background-color: #000025!important;
   margin: 30px auto;
-  color: #ffffff!important;
+  color: #fff!important;
   text-align: center;
-  font-family: 'Righteous', cursive!important;
+  font-family: 'Barlow', sans-serif!important;
 }
 input, select, textarea{
     color: #000000;
@@ -85,7 +85,7 @@ button {
 #welcome{
   color:#FFF;
   font-size: 24px;
-  font-family: 'Calligraffitti', cursive;
+  font-family: 'Barlow', sans-serif!important;
   padding-top: 20px;
 }
 .flash {
@@ -103,6 +103,7 @@ button {
   border-left: 1px solid #000025;
   border-right: 1px solid #000025;
   padding-top: 50px;
+  font-family: 'Barlow', sans-serif!important;
 
 }
 .navbar.navbar-default .navbar-brand {

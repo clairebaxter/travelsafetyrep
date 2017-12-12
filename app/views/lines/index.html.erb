@@ -10,6 +10,16 @@
 
 <div class = "container">
   <%= grid(@lines_grid, show_filters: :always) do |g|
+    
+  g.row_attributes do |version|
+    if version
+      {style: 'background-color: #000025;'}
+    end
+  end
+  
+  g.blank_slate  do
+    "There are no lines."
+  end
   
   g.column name: 'Train', attribute: 'train', custom_filter: :auto do |line|
     line.train

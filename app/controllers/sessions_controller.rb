@@ -17,6 +17,6 @@ class SessionsController < ApplicationController
   end
   
   def show
-    byebug
+    
   end
 end

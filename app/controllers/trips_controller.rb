@@ -18,10 +18,8 @@ class TripsController < ApplicationController
 
     def join
         @trip = Trip.find params[:id]
-        #params_map = ActiveSupport::HashWithIndifferentAccess.new(params[:trip])
-        #@passenger = Passenger.find params[:id]
-        byebug
-        @passenger = Passenger.find params[:passenger_id]
+        #byebug
+        @passenger = current_passenger
         byebug
         @trip.passenger_name = @trip.passenger_name << @passenger
         flash[:notice] = "You have successfully joined this #{@trip.train} trip."

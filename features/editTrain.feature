@@ -4,7 +4,7 @@ Scenario: Edit a subway line’s information
 	When I follow "Lines"
 	Then I am on the Lines page
 	When I follow "More About the L"
-	Then I should be on the Details About L page
+	Then I am on the Details About L page
 	When I follow "Edit Info"
 	Then I should be on the Edit Line page
 	When I fill in the “Train” with “L”

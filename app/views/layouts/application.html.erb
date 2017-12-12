@@ -14,9 +14,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="application.css">
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
 </head>
 
 <body>
@@ -27,9 +28,27 @@
     <a><%= link_to 'Urban Pancake', root_path, :class => 'navbar-brand'%></a>
     </div>
     <ul class="nav navbar-nav">
-      <li <% if current_page?(lines_path) or  current_page?(lines_new_path)%> class="active" <% end %> ><%= link_to 'Lines', lines_path %></li>
-      <li <% if current_page?(trips_path) or current_page?(trips_new_newtrip_path) %> class="active" <% end %>><%= link_to 'Trips', trips_path %></li>
-      <li <% if current_page?(account_path) %> class="active" <% end %> ><%= link_to 'Account', account_path %></li>
+      <li <% if current_page?(lines_path) or  current_page?(lines_new_path)%> class="active" <% end %> >
+        <% if session[:logged_in] and session[:testing?] != true and current_user%>
+        <%= link_to 'Lines', lines_path %>
+        <% else %>
+          
+        <% end %>
+        </li>
+      <li <% if current_page?(trips_path) or current_page?(trips_new_newtrip_path) %> class="active" <% end %>>
+        <% if session[:logged_in] and session[:testing?] != true and current_user%>
+        <%= link_to 'Trips', trips_path %>
+        <% else %>
+          
+        <% end %>
+        </li>
+      <li <% if current_page?(account_path) %> class="active" <% end %> >
+        <% if session[:logged_in] and session[:testing?] != true and current_user%>
+        <%= link_to 'Account', account_path %>
+        <% else %>
+          
+        <% end %>
+        </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li>
@@ -42,9 +61,9 @@
         <!--IT IS USED IN THE CUCUMBER TESTING TO MAKE A FAKE USER-->
         <!--WITHOUT IT, THE CUCUMBER TESTS WILL FAIL!             -->
         <% if session[:logged_in] and session[:testing?] != true and current_user%>
-          <a href="<%= lines_path(current_user) %>/" <% if current_page?(lines_path(current_user)) %> class="uk-active" <% end %> >
+          <a href="<%= account_path %>/" <% if current_page?(lines_path(current_user)) %> class="uk-active" <% end %> >
         <% else %>
-          <a href="<%= lines_path %>" <% if current_page?(lines_path) %> class="uk-active" <% end %> >
+          
         <% end %>
         <!--trying to fix-->
         Hi, 
