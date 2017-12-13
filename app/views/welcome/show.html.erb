@@ -7,7 +7,37 @@
 
 <body>
 
-<%=image_tag("logo2.jpg", size: "400x300")%>
+<%=image_tag("logo2.jpg", alt: "Urban Pancake Logo", size: "400x300")%>
 </body>
+
+<html>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>New York City</h3>
+    <div id="map", alt="NYC Interactive Map"></div>
+    <script>
+      function initMap() {
+        var nyc = {lat: 40.7128, lng: -74.0060};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: nyc
+        });
+        
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJmx0miLwHt4IqpXrZmB6aYHphPD1hjUg&callback=initMap"
+    type="text/javascript"></script>
+    </script>
+  </body>
+</html>
+
 
 <p id = "welcome">We aim to help provide a safe journey home for city dwellers by facilitating travel together.</p>

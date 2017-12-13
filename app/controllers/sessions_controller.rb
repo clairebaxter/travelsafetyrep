@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     passenger=Passenger.find_by(:provider => auth["provider"], :uid => auth["uid"]) ||
       Passenger.create_with_omniauth(auth)
     session[:passenger_id] = passenger.id
+    
     session[:logged_in] = true
     redirect_to lines_path, :notice => "Welcome, #{passenger.name}!"
   end
@@ -17,6 +18,6 @@ class SessionsController < ApplicationController
   end
   
   def show
-    
+    #{@current_passenger.image}
   end
 end

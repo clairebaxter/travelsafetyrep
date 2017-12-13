@@ -16,7 +16,7 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
     when /^the UrbanPancake home page/
-      '/welcome/show'  
+      ''  
    
     when /^the Lines page/
       '/lines'
