@@ -3,23 +3,16 @@
 <html lang="en">
   
 <head>
+  <title>UrbanPancake</title>
+  <link rel="stylesheet" type="text/css" href="/application.css">
   <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
   <!--<link href="https://fonts.googleapis.com/css?family=Berkshire Swash" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">-->
   <link href="https://fonts.googleapis.com/css?family=Permanent Marker" rel="stylesheet">
-
-  <title>UrbanPancake</title>
-  
   <link rel="icon" href="pancake.ico"/>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="application.css">
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
 </head>
 
 <body>
@@ -44,8 +37,7 @@
           
         <% end %>
         </li>
-      
-        </li>
+      </li>
       <li <% if current_page?(account_path) %> class="active" <% end %> >
         <% if session[:logged_in] and session[:testing?] != true and current_user%>
         <%= link_to 'Account', account_path %>
@@ -72,9 +64,8 @@
         <!--trying to fix-->
          
           <% if current_user %>
-            Hi,<%= current_user.name.split(" ")[0] %> 
+            Hi, <%= current_user.name.split(" ")[0] %> 
           <% else %>
-           
           <% end %>  
           </a>
           <div class="uk-navbar-dropdown" uk-dropdown="pos: bottom-right">
@@ -100,12 +91,9 @@
 <% if session[:logged_in] and session[:testing?] != true %>
   <%end%>
 
-  
-
 <%= stylesheet_link_tag 'application'%>
 <%= javascript_include_tag 'application'%>
 <%= csrf_meta_tags%>
-
 
   <!-- Displays flash message on each page -->
       <% flash.each do |key, value| %>
@@ -131,10 +119,12 @@
   <%= yield%>
   </main>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>      
 
 <footer>
-  <p> Provided to you by the underdogs </p>
+  <div>&copy; Provided to you by the underdogs</div>
 </footer>
 
 </html>
