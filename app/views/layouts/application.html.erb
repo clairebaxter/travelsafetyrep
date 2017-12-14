@@ -4,7 +4,7 @@
   
 <head>
   <title>UrbanPancake</title>
-  <link rel="stylesheet" type="text/css" href="/application.css">
+  <link rel="stylesheet" type="text/css" href="/assets/application.css">
   <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
   <!--<link href="https://fonts.googleapis.com/css?family=Berkshire Swash" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">-->
@@ -74,9 +74,9 @@
       </li>
       <li>
         <% if session[:logged_in] and session[:testing?] != true and current_user%>
-          <%= link_to ' Logout', logout_path, :class => 'glyphicon glyphicon-log-out'%>
+          <%=link_to ' Logout', logout_path, :class => 'glyphicon glyphicon-log-out'%>
         <%else %>
-          <li><%= link_to ' Login', login_path, :class => 'glyphicon glyphicon-log-in'%></li>
+          <li><%=link_to ' Login', login_path, :class => 'glyphicon glyphicon-log-in'%></li>
         <%end%>
       </li>
     </ul>
