@@ -30,19 +30,21 @@
     <a><%= link_to 'Urban Pancake', root_path, :class => 'navbar-brand'%></a>
     </div>
     <ul class="nav navbar-nav">
-      <li <% if current_page?(lines_path) or  current_page?(lines_new_path)%> class="active" <% end %> >
-        <% if session[:logged_in] and session[:testing?] != true and current_user%>
-        <%= link_to 'Lines', lines_path %>
-        <% else %>
-          
-        <% end %>
-        </li>
       <li <% if current_page?(trips_path) or current_page?(trips_new_newtrip_path) %> class="active" <% end %>>
         <% if session[:logged_in] and session[:testing?] != true and current_user%>
         <%= link_to 'Trips', trips_path %>
         <% else %>
           
         <% end %>
+      
+      <li <% if current_page?(lines_path) or  current_page?(lines_new_path)%> class="active" <% end %> >
+        <% if session[:logged_in] and session[:testing?] != true and current_user%>
+        <%= link_to 'Train Info', lines_path %>
+        <% else %>
+          
+        <% end %>
+        </li>
+      
         </li>
       <li <% if current_page?(account_path) %> class="active" <% end %> >
         <% if session[:logged_in] and session[:testing?] != true and current_user%>
@@ -68,11 +70,11 @@
           
         <% end %>
         <!--trying to fix-->
-        Hi, 
+         
           <% if current_user %>
-            <%= current_user.name.split(" ")[0] %> 
+            Hi,<%= current_user.name.split(" ")[0] %> 
           <% else %>
-            GUEST
+           
           <% end %>  
           </a>
           <div class="uk-navbar-dropdown" uk-dropdown="pos: bottom-right">

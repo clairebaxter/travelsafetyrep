@@ -46,7 +46,12 @@ h3 {
   font-weight: 300;
   text-transform: uppercase;
 }
-
+footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+}
 ul {
   list-style-type: none;
 }
@@ -63,6 +68,10 @@ table {
 button {
   color: black;
 }
+nav{
+  position:fixed;
+}
+
 #submit_tag {
   color: #000000;
 }

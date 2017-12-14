@@ -32,3 +32,5 @@ more_lines = [
 more_lines.each do |line|
    Line.create!(line)
 end
+
+trips = Trip.create([{:train => 'A', :passenger_name => 'Test'}])

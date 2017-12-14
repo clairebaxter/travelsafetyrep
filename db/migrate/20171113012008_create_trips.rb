@@ -3,7 +3,6 @@ class CreateTrips < ActiveRecord::Migration
     create_table :trips do |t|
       t.string :train
       t.current_passenger.name :passenger_name, array: true
-      t.belongs_to :passenger, index: true
       t.timestamps
     end
   end

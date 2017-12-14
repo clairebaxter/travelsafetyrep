@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   post '/trips' => 'trips#create'
   get '/trips/:id/edit' => 'trips#edit'
   put '/trips.:id' => 'trips#update'
-  post '/trips/:id' => 'trips#join'
+  get '/trips/join/:id' => 'trips#join'
   delete '/trips.:id' => 'trips#destroy'
   put '/trips.:id' => 'trips#join', as: :join
   

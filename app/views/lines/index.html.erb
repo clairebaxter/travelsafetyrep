@@ -3,9 +3,6 @@
 
 <body>
 
-<%# = require wice_grid %>
-
-<src="app/assets/images/Slide1.jpg" alt="logo not here!" height="42" width="42">
 <h2>NYC Train Lines</h2>
 
 <div class = "container">
@@ -38,46 +35,14 @@
   end
   
   g.column do |line|
-    link_to('Edit', edit_line_path(line))
+    link_to('More Info', line_path(line))
   end
  
 end -%>
 <button class="wg-external-submit-button" data-grid-name="grid">Submit</button>
 <button class="wg-external-reset-button" data-grid-name="grid">Reset</button>
 
-   
-
-<% 
-=begin %>  <% ruby_code %>
-
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Train</th>
-          <th>Color</th>
-          <th>Borough</th>
-        </tr>
-      </thead>
-    <tbody>
-      <%@lines.each do |line|%>
-        <tr>
-          <td><%= line.train%></td>
-          <td><%= line.color%></td>
-          <td><%= line.borough%></td>
-          <td><%=link_to "More About The #{line.train}", line_path(line),:class => 'link'%></td> 
-        </tr>
-      <%end%>
-    </tbody>
-   <% 
-=end %> 
-
-  
-
-=begin %>
 </div>
-    <p class="link"><%= link_to 'Add New Train', new_line_path,:class => 'link' %></p>
-    <p class="link"><%= link_to 'Add New Trip', trips_new_newtrip_path,:class => 'link' %></p>
-=end %>
 </body>
-<%#= paginate @lines %>
+
 </html>

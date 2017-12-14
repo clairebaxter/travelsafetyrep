@@ -5,35 +5,44 @@
 </head>
 <body>
 
-<src="app/assets/images/Slide1.jpg" alt="logo not here!" height="42" width="42">
-
-
 <div class="container">
-  <table class="table table-bordered">
-    <h2> NYC Train Trips</h2>        
-      <thead>
-        <tr>
-          <th>Passenger</th>
-          <th>Train</th>
-          <th>Departure Time</th>
-        </tr>
-      </thead>
-      
-      <tbody>  
-        <%@trips.each do |trip|%>
-          <tr>
-            <td><%= trip.passenger_name%></td>
-            <td><%= trip.train%></td>
-            <td><%=link_to "More About The #{trip.train} Trip", trip_path(trip),:class => 'link'%></td> 
-          </tr>
-        <%end%>
-      </tbody>
+  <%= grid(@trips_grid, show_filters: :always) do |g|
     
-</div>
-<p><%= link_to 'Add New Trip', trips_new_newtrip_path,:class => "link" %></p>
-<p><%= link_to 'Back to lines list', lines_path, :class => "link"%><p/>
-
+  g.row_attributes do |version|
+    if version
+      {style: 'background-color: #000025;'}
+    end
+  end
   
+  g.blank_slate  do
+    "There are no trips."
+  end
+  
+  g.column name: 'Trip Creator', attribute: 'passenger_name' do |trip|
+    trip.passenger_name
+  end
+
+  g.column name: 'Train', attribute: 'train', custom_filter: :auto do |trip|
+    trip.train
+  end
+  
+  g.column name: 'Time', attribute: 'timestamps', filter_type: :rails_datetime_helper do |trip|
+    trip.timestamps
+    
+    
+    #Time.now
+  end
+  
+  g.column do |trip|
+    link_to('More Info', trip_path(trip))
+  end
+ 
+end -%>
+
+<button class="wg-external-submit-button" data-grid-name="grid">Submit</button>
+<button class="wg-external-reset-button" data-grid-name="grid">Reset</button>
+<a href = "/trips/new">New</a>
+</div>
+
 </body>
-<%= paginate @trips %>
 </html>

@@ -5,11 +5,17 @@ class TripsController < ApplicationController
         #@passenger = Passenger.find(session[:passenger_id])
         #@trips = Trip.where(:passenger_id => @passenger)
         @trips = Trip.order(:passenger_name).page params[:page]
+        
+        @trips_grid = initialize_grid(Trip,
+        per_page: 5 )
     end
 
     def show
-        id = params[:id]
-        @trip = Trip.find(id)
+        @trip = Trip.find(params[:id])
+        @passengerString = ''
+        @trip.passenger.each do |p|
+            @passengerString += p.name + " "
+        end
     end
     
     def newtrip 
@@ -18,19 +24,19 @@ class TripsController < ApplicationController
 
     def join
         @trip = Trip.find params[:id]
-        #byebug
-        @passenger = current_passenger
-        byebug
-        @trip.passenger_name = @trip.passenger_name << @passenger
-        flash[:notice] = "You have successfully joined this #{@trip.train} trip."
-        redirect_to trips_path
+        @passenger = Passenger.find(session[:passenger_id])
+        @trip.passenger << @passenger
+        if @trip.save
+            flash[:notice] = "You have successfully joined this #{@trip.train} trip."
+        end
+        redirect_to trips_path  
     end
     
     def create
         
         params_map = ActiveSupport::HashWithIndifferentAccess.new(params[:trip])
+        
         @trip = Trip.new(params_map)
-        #byebug
         if @trip.valid?
             @trip.save
             redirect_to trips_path

@@ -1,9 +1,8 @@
-<h1>User Profile</h1>
+<h1>My Account</h1>
     
 <section>
 	<% if current_passenger.normalimage %><img src="<%= current_passenger.normalimage %>" alt="Profile picture" width='200' class="uk-border-circle"><% end %>
 	<h2><%= current_passenger.name %></h2>
-	
 	<p>Member Since: <%= current_passenger.created_at %></p>
 	
 	<p><%= link_to ' Sign Out', logout_path, :class => 'glyphicon glyphicon-log-out link'%></p>

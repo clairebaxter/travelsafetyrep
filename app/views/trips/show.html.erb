@@ -1,0 +1,25 @@
+<html>
+    <body>
+        <div>
+            <h1>
+                Trips 
+            </h1>
+            <br/>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Creator</th>
+                    <th>Passengers</th>
+                </tr>
+                <tr>
+                    <td><%= @trip.train %></td>
+                    <td><%= @trip.train %></td>
+                    <td><%= @passengerString %> </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <a href = "/trips/join/<%=@trip.id %>">Join</a>
+        </div>
+    </body>
+</html>
