@@ -25,15 +25,15 @@
         
         <ul class="nav navbar-nav">
           <li <% if current_page?(trips_path) or current_page?(trips_new_newtrip_path) %> class="active" <% end %>>
-            <%# if session[:logged_in] and session[:testing?] != true and current_user%>
+            <% if session[:logged_in] and session[:testing?] != true and current_user%>
             <%= link_to 'Trips', trips_path, data: { keybinding: 't' } %>
           
-            <%# end %>
+            <% end %>
           </li>
           <li <% if current_page?(lines_path) or  current_page?(lines_new_path)%> class="active" <% end %> >
-            <%# if session[:logged_in] and session[:testing?] != true and current_user%>
+            <% if session[:logged_in] and session[:testing?] != true and current_user%>
             <%= link_to 'Train Info', lines_path, data: { keybinding: 'i' } %>
-            <%# end %>
+            <% end %>
           </li>
           <li <% if current_page?(account_path) %> class="active" <% end %> >
             <% if session[:logged_in] and session[:testing?] != true and current_user%>
