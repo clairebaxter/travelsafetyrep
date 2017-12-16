@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   def force_log_in
     unless session[:logged_in]
       flash[:notice] = "Please log in."
-      redirect_to welcome_show_url
+      redirect_to root_path
       
     end
   end

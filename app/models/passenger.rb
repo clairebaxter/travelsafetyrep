@@ -10,10 +10,6 @@ class Passenger < ActiveRecord::Base
           
          
           :gender => auth["info"]["gender"])
-          #:picture => auth["info"]["picture"])
-          #:age_range => auth["info"]["age_range"])
-          #user.avatar = auth.info.image 
-          #passenger.image = auth.info.image
           
     end
     

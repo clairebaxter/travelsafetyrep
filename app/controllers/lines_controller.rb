@@ -1,5 +1,5 @@
 class LinesController < ApplicationController
-    before_action :force_log_in
+   # before_action :force_log_in
     
     def index
         @lines = Line.order(:train).page params[:page]

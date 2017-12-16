@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-    before_action :force_log_in
+    #before_action :force_log_in
     def index
         @trips = Trip.order(:passenger_name).page params[:page]
         @trips_grid = initialize_grid(Trip, per_page: 5 )
