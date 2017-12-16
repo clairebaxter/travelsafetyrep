@@ -11,16 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171213233751) do
+ActiveRecord::Schema.define(version: 20171216003723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "lines", force: :cascade do |t|
-    t.string "train"
-    t.string "color"
-    t.string "borough"
-    t.text   "description"
+    t.string   "train"
+    t.string   "color"
+    t.string   "borough"
+    t.text     "description"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "passengers", force: :cascade do |t|
@@ -50,9 +54,9 @@ ActiveRecord::Schema.define(version: 20171213233751) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "passenger_id"
-    t.string   "passenger_name"
     t.string   "train"
     t.datetime "timestamps"
+    t.string   "passenger_name", array: true
   end
 
   create_table "users", force: :cascade do |t|

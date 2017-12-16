@@ -36,16 +36,22 @@ h1{
   font-size: 32px;
   font-weight: 300;
   text-transform: uppercase;
+  font-family: 'Barlow', sans-serif!important;
+
 }
 h2 {
   font-size: 24px;
   font-weight: 300;
   text-transform: uppercase;
+  font-family: 'Barlow', sans-serif!important;
+
 }
 h3 {
   font-size: 24px;
   font-weight: 300;
   text-transform: uppercase;
+  font-family: 'Barlow', sans-serif!important;
+
 }
 footer {
 
@@ -55,9 +61,14 @@ footer {
    height:60px;   /* Height of the footer */
    margin-top: 1rem;
 	 margin-bottom: 1rem;
+	 font-family: 'Barlow', sans-serif!important;
+
 }
 ul {
   list-style-type: none;
+  text-align: center;
+  font-family: 'Barlow', sans-serif!important;
+
 }
 li{
   padding-left: 0px;
@@ -98,6 +109,10 @@ button {
 .link:hover {
   color: #FFF;
   text-decoration: none;
+}
+
+.traindetails{
+  text-align: left;
 }
 
 #welcome{

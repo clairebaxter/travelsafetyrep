@@ -22,7 +22,10 @@ module NavigationHelpers
       '/lines'
       
     when /^the Trips page/
-      '/trips'  
+      '/trips' 
+      
+    when /^the Trip page/
+      '/trips/1'
       
       
   

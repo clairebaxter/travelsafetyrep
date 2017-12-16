@@ -1,4 +1,4 @@
--# in app/views/line/show.html.haml
+-# in app/views/lines/show.html.haml
 <body>
 
 
@@ -7,22 +7,19 @@
 </nav>
 %h2 Details about #{@line.train}
 %ul#details
-  %li
+  %li#traindetails
     Color:
     = @line.color
-  %li
+  %li#traindetails
     Borough:
     = @line.borough
 %h2 Description:
 %p#description= @line.description
+- if @line.train == 'L'
+  = image_tag("Ltrain1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ltrain2.png", {:style => "width:400px;"})
 
-= image_tag("Ltrain1.png", {:style => "width:400px;"})
-%br
-= image_tag("Ltrain2.png", {:style => "width:400px;"})
-
-
-:erb
-  <%= image_tag @line.image, :alt => 'ltrain_image' %> 
 
 %p= link_to 'Edit Info', edit_line_path(@line),{:id => "link"}
 %p= link_to 'Delete', line_path(@line), {:method => :delete,:id => "link"}
