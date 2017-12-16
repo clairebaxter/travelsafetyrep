@@ -14,7 +14,14 @@ end
 
 more_lines = [
 {:train => '1', :color => 'Red', :borough => 'Manhattan', :description => ' The one train is fairly old'},
-{:train=>'2',:color =>'Red', :borough =>'Manhattan',:description =>'Same track as the 1 and 3'},
+{:train=>'2',:color =>'Red', :borough =>'Manhattan',:description =>'The 2 Seventh Avenue Express is a rapid transit service in the A Division of the New York City Subway. Its route emblem, or "bullet", is colored red since it uses the IRT Broadway–Seventh Avenue Line through most of Manhattan.
+
+The 2 operates at all times. Weekday service operates between 241st Street in Wakefield, Bronx and Flatbush Avenue–Brooklyn College in Flatbush, Brooklyn; limited rush hour service originates and terminates at New Lots Avenue in East New York, Brooklyn instead of Flatbush Avenue. Daytime service operates local in the Bronx and Brooklyn and express in Manhattan (between 96th and Chambers Streets); late night service operates local along its entire route.
+
+Weekend service (from 11:45 p.m. Friday evening to 5 a.m. Monday morning) operates between Dyre Avenue in Eastchester, Bronx and South Ferry in Lower Manhattan. Daytime service operates local in the Bronx and in Manhattan (except between 96th and 42nd Streets, where service operates express); late night service operates local along its entire route.
+
+Historically, 2 trains have also run to Crown Heights–Utica Avenue or New Lots Avenue. They ran exclusively on the IRT New Lots Line until 1983, when the 2 was routed to Flatbush Avenue. This is still the case with some rush-hour trains, although they now run to New Lots Avenue only. Same track as the 1 and 3, for more information please
+go to http://web.mta.info/nyct/service/twoline.htm'},
 {:train=>'3',:color =>'Red', :borough =>'Manhattan',:description =>'Same track as the 1 and 2'},
 {:train=>'4',:color =>'Green',:borough =>'Manhattan',:description =>'Express through the Bronx and Manhattan'},
 {:train=>'5',:color =>'Green', :borough =>'Manhattan',:description => 'Clean express'},

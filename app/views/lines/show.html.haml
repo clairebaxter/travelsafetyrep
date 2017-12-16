@@ -5,16 +5,18 @@
 //= require wice_grid
 <body>
 </nav>
-%h2#details Details about #{@line.train}
-%ul#details
+%h2#details Details About the #{@line.train} Train
+%ul
   %li#traindetails
     Color:
     = @line.color
   %li#traindetails
     Borough:
     = @line.borough
-%h2#description Description:
+%h2#description Description
 %p#linedescribe= @line.description
+
+%h3#linestops Stops on the #{@line.train}:
 - if @line.train == 'L'
   = image_tag("Ltrain1.png", {:style => "width:400px;"})
   %br
@@ -35,7 +37,263 @@
   = image_tag("1train5.png", {:style => "width:400px;"})
   %br
   = image_tag("1train6.png", {:style => "width:400px;"})
+- if @line.train == '2'
+  = image_tag("2train1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("2train2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("2train3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("2train4.png", {:style => "width:400px;"})
+  %br
+  = image_tag("2train5.png", {:style => "width:400px;"})
+  %br
+  = image_tag("2train6.png", {:style => "width:400px;"})
+  %br
+  = image_tag("2train7.png", {:style => "width:400px;"})
+  %br
+  = image_tag("2train8.png", {:style => "width:400px;"})
+- if @line.train == '3'
+  = image_tag("3train1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("3train2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("3train3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("3train4.png", {:style => "width:400px;"})
+  %br
+  = image_tag("3train5.png", {:style => "width:400px;"})
+- if @line.train == '4'
+  = image_tag("4train1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("4train2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("4train3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("4train4.png", {:style => "width:400px;"})
+  %br
+  = image_tag("4train5.png", {:style => "width:400px;"})
+  %br
+  = image_tag("4train6.png", {:style => "width:400px;"})
+  %br
+  = image_tag("4train7.png", {:style => "width:400px;"})
+- if @line.train == '5'
+  = image_tag("5train1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("5train2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("5train3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("5train4.png", {:style => "width:400px;"})
+  %br
+  = image_tag("5train5.png", {:style => "width:400px;"})
+  %br
+  = image_tag("5train6.png", {:style => "width:400px;"})
+  %br
+  = image_tag("5train7.png", {:style => "width:400px;"})  
+  %br 
+  = image_tag("5train8.png", {:style => "width:400px;"})
+  %br
+  = image_tag("5train9.png", {:style => "width:400px;"})
+- if @line.train == '6'
+  = image_tag("6train1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("6train2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("6train3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("6train4.png", {:style => "width:400px;"})
+  %br
+  = image_tag("6train5.png", {:style => "width:400px;"})
+  %br
+  = image_tag("6train6.png", {:style => "width:400px;"})
+  %br
+  = image_tag("6train7.png", {:style => "width:400px;"})
+- if @line.train == '7'
+  = image_tag("7train1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("7train2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("7train3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("7train4.png", {:style => "width:400px;"})
+- if @line.train == 'A'
+  = image_tag("Atrain1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Atrain2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Atrain3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Atrain4.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Atrain5.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Atrain6.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Atrain7.png", {:style => "width:400px;"})  
+  %br 
+  = image_tag("Atrain8.png", {:style => "width:400px;"})
+- if @line.train == 'C'
+  = image_tag("Ctrain1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ctrain2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ctrain3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ctrain4.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ctrain5.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ctrain6.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ctrain7.png", {:style => "width:400px;"})
+- if @line.train == 'E'
+  = image_tag("Etrain1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Etrain2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Etrain3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Etrain4.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Etrain5.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Etrain6.png", {:style => "width:400px;"})
+- if @line.train == 'B'
+  = image_tag("Btrain1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Btrain2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Btrain3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Btrain4.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Btrain5.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Btrain6.png", {:style => "width:400px;"})
+- if @line.train == 'D'
+  = image_tag("Dtrain1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Dtrain2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Dtrain3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Dtrain4.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Dtrain5.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Dtrain6.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Dtrain7.png", {:style => "width:400px;"})  
+  %br 
+  = image_tag("Dtrain8.png", {:style => "width:400px;"})
+- if @line.train == 'F'
+  = image_tag("Ftrain1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ftrain2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ftrain3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ftrain4.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ftrain5.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ftrain6.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ftrain7.png", {:style => "width:400px;"})  
+  %br 
+  = image_tag("Ftrain8.png", {:style => "width:400px;"})
+  %br 
+  = image_tag("Ftrain9.png", {:style => "width:400px;"})
+- if @line.train == 'M'
+  = image_tag("Mtrain1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Mtrain2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Mtrain3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Mtrain4.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Mtrain5.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Mtrain6.png", {:style => "width:400px;"})
+- if @line.train == 'G'
+  = image_tag("Gtrain1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Gtrain2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Gtrain3.png", {:style => "width:400px;"})
+- if @line.train == 'J'
+  = image_tag("Jtrain1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Jtrain2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Jtrain3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Jtrain4.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Jtrain5.png", {:style => "width:400px;"})
+- if @line.train == 'Z'
+  = image_tag("Ztrain1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ztrain2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ztrain3.png", {:style => "width:400px;"})
+- if @line.train == 'N'
+  = image_tag("Ntrain1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ntrain2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ntrain3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ntrain4.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ntrain5.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ntrain6.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ntrain7.png", {:style => "width:400px;"})  
+  %br 
+  = image_tag("Ntrain8.png", {:style => "width:400px;"})
+  %br 
+  = image_tag("Ntrain9.png", {:style => "width:400px;"})
+- if @line.train == 'Q'
+  = image_tag("Qtrain1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Qtrain2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Qtrain3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Qtrain4.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Qtrain5.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Qtrain6.png", {:style => "width:400px;"})
+- if @line.train == 'R'
+  = image_tag("Rtrain1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Rtrain2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Rtrain3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Rtrain4.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Rtrain5.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Rtrain6.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Rtrain7.png", {:style => "width:400px;"})  
+  %br 
+  = image_tag("Rtrain8.png", {:style => "width:400px;"})
+- if @line.train == 'W'
+  = image_tag("Wtrain1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Wtrain2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Wtrain3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Wtrain4.png", {:style => "width:400px;"})
 
+  
 %p= link_to 'Edit Info', edit_line_path(@line),{:id => "link"}
-%p= link_to 'Delete', line_path(@line), {:method => :delete,:id => "link"}
 %p= link_to 'Back to lines list', lines_path,{:id => "returnLink", :id => "link"}

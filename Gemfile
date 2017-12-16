@@ -22,7 +22,7 @@ gem 'rdoc'
 
 #to add images to database
 gem "paperclip", "~> 4.1.1"
-
+gem "koala"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -52,8 +52,7 @@ gem 'html2haml'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-
+gem 'mousetrap-rails', github: 'kugaevsky/mousetrap-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -67,7 +66,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   
-
   group :test do
     gem 'cucumber-rails', :require => false
     gem 'cucumber-rails-training-wheels' # some pre-fabbed step definitions  

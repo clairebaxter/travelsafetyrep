@@ -40,11 +40,11 @@ class TripsController < ApplicationController
     def create
         @passenger = Passenger.find(session[:passenger_id])
         params[:trip][:passenger_name] = @passenger.name
+        params_map = ActiveSupport::HashWithIndifferentAccess.new(params[:trip])
+        @trip = Trip.new(params_map)
        
-        @trip = Trip.new(trip_params)
-        #byebug
         if @trip.valid?
-          
+            byebug
             @trip.save
             #byebug
             redirect_to trips_path
@@ -81,7 +81,7 @@ class TripsController < ApplicationController
     
     private 
         def trip_params
-            params.require(:trip).permit(:passenger_name,:train,:timestamps)
+            params.require(:trip).permit(:train,:passenger_name, :timestamps)
         end
     
 end

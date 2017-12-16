@@ -24,7 +24,7 @@ class LinesController < ApplicationController
         @line = Line.new(params_map)
        
         if @line.valid?
-            #byebug
+            byebug
             @line.save
             redirect_to lines_path
             flash[:notice] = "#{@line.train} was successfully created."

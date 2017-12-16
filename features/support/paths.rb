@@ -27,6 +27,9 @@ module NavigationHelpers
     when /^the Trip page/
       '/trips/1'
       
+    when /^the Account page/
+      '/account'
+      
       
   
   

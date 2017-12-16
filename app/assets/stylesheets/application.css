@@ -10,8 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require mousetrap
  *= require_tree .
  *= require_self
+ 
  */
   
 body {
@@ -77,20 +79,36 @@ li{
 
 }
 
+#linestops{
+  text-transform: none!important;
+}
+
+#traindetails{
+  text-decoration: none!important;
+}
+
 #linedescribe{
   font-size: 25px;
   font-family: 'Courgette', cursive;
+  text-decoration: none!important;
 }
 
 #traindetails{
   font-size: 30px;
+  text-decoration: none!important;
+  
 }
 
 #description{
   font-size: 50px;
+  text-transform: none!important;
+  text-decoration: underline;
+  
 }
 #details{
   font-size: 50px;
+  text-transform: none!important;
+  text-decoration: underline;
 }
 
 table {

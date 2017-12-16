@@ -5,7 +5,7 @@
     = select :trip, :train, ['1', '2','3','4','5','6','7','A','C','E','B','D','G','J','F','L','N','Q','R','W','S']
     
     = label :trip, :timestamps, 'Departure Time'
-    = datetime_select :trip, :timestamps, default: Time.now, ampm: true
+    = datetime_select :trip, :timestamps, default: Time.now-6.hours, ampm: true
 
     = submit_tag("Save Changes", :style => "color:black;")
     
