@@ -4,6 +4,9 @@
 
 </head>
 <body>
+<h2>Current Trips</h2>
+
+<a class = "link" href = "/trips/new">Create New Trip</a>
 
 <div class="container">
   <%= grid(@trips_grid, show_filters: :always) do |g|
@@ -27,22 +30,18 @@
   end
   
   g.column name: 'Time', attribute: 'timestamps', filter_type: :rails_datetime_helper do |trip|
-    trip.timestamps
-    
-    
-    #Time.now
+    Time.parse(trip.timestamps.to_s).strftime("%B #{trip.timestamps.day.ordinalize} at %-l:%M%P")
+
   end
   
   g.column do |trip|
     link_to('More Info', trip_path(trip))
+    #link_to 'Delete', trip_path(trip), {:method => :delete,:id => "link"}
   end
  
 end -%>
-
-<button class="wg-external-submit-button" data-grid-name="grid">Submit</button>
-<button class="wg-external-reset-button" data-grid-name="grid">Reset</button>
-<a href = "/trips/new">New</a>
 </div>
+
 
 </body>
 </html>

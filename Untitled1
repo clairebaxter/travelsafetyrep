@@ -1,0 +1,2 @@
+  = datetime_field :js_start_time, as: :date_time_picker
+  

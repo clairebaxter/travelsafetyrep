@@ -3,13 +3,13 @@
 <html lang="en">
   
 <head>
-  <title>UrbanPancake</title>
+<link rel="shortcut icon" href="/images/pancake.ico"/>  <title>UrbanPancake</title>
   <link rel="stylesheet" type="text/css" href="/assets/application.css">
   <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
   <!--<link href="https://fonts.googleapis.com/css?family=Berkshire Swash" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">-->
   <link href="https://fonts.googleapis.com/css?family=Permanent Marker" rel="stylesheet">
-  <link rel="icon" href="pancake.ico"/>
+  <!--<link rel="n" href="pancake.ico"/>-->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -29,14 +29,13 @@
         <% else %>
           
         <% end %>
-      
+      </li>
       <li <% if current_page?(lines_path) or  current_page?(lines_new_path)%> class="active" <% end %> >
         <% if session[:logged_in] and session[:testing?] != true and current_user%>
         <%= link_to 'Train Info', lines_path %>
         <% else %>
           
         <% end %>
-        </li>
       </li>
       <li <% if current_page?(account_path) %> class="active" <% end %> >
         <% if session[:logged_in] and session[:testing?] != true and current_user%>

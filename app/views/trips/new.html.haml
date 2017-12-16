@@ -1,13 +1,11 @@
 %h2 Create New Trip
 = form_tag trips_path, :method => :post do
-    = label :trip, :passenger_name, 'Passenger'
-    = text_field :trip, :passenger_name
 
     = label :trip, :train, 'Train'
     = select :trip, :train, ['1', '2','3','4','5','6','7','A','C','E','B','D','G','J','F','L','N','Q','R','W','S']
     
     = label :trip, :timestamps, 'Departure Time'
-    = datetime_field :js_start_time, as: :date_time_picker
+    = datetime_select :trip, :timestamps, default: Time.now, ampm: true
 
     = submit_tag("Save Changes", :style => "color:black;")
     

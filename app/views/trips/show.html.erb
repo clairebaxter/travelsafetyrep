@@ -7,19 +7,27 @@
             <br/>
             <table>
                 <tr>
-                    <th>Name</th>
-                    <th>Creator</th>
-                    <th>Passengers</th>
+                    <th>Train</th>
+                    <th>Trip Creator</th>
+                    <th>Other Passengers</th>
                 </tr>
                 <tr>
                     <td><%= @trip.train %></td>
-                    <td><%= @trip.train %></td>
+                    <td><%= @trip.passenger_name%></td>
                     <td><%= @passengerString %> </td>
                 </tr>
             </table>
         </div>
         <div>
             <a href = "/trips/join/<%=@trip.id %>">Join</a>
+            <a>
+                <%@trip.passenger_name%>
+                <% if @trip.passenger_name==@passenger.name and session[:testing?] != true%>
+                <%=link_to 'Delete', trip_path(@trip), {:method => :delete,:id => "link"}%>
+                <% else %>
+          
+                <% end %>
+            </a>
         </div>
     </body>
 </html>

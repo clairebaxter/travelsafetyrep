@@ -6,6 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+environment_seed_file = File.join(Rails.root, 'db', 'seeds', "#{Rails.env}.rb")
+
+def seed_image(file_name)
+  File.open(File.join(Rails.root, "/app/assets/images/#{file_name}.png"))
+end
+
 more_lines = [
 {:train => '1', :color => 'Red', :borough => 'Manhattan', :description => ' The one train is fairly old'},
 {:train=>'2',:color =>'Red', :borough =>'Manhattan',:description =>'Same track as the 1 and 3'},
@@ -29,8 +35,18 @@ more_lines = [
 {:train => 'Q',:color => 'Yellow',:borough => 'Manhattan',:description => 'The new 2nd ave line!'}, 
 {:train=>'R',:color =>'Yellow',:borough =>'Manhattan',:description => 'Old and worn out'},
 {:train=>'W',:color =>'Yellow',:borough =>'Brooklyn',:description => 'What used to be the Q line'}]
+
+#might use this later for image path, currently not working
+#:image => '/app/assets/images/Ltrain1.png'
+
 more_lines.each do |line|
    Line.create!(line)
+end
+
+#.where("train= 'L'") 
+more_lines.each do |attributes|
+  attributes[:image] = seed_image('Ltrain1')
+  #Line.find_or_create_by(attributes[:train])
 end
 
 trips = Trip.create([{:train => 'A', :passenger_name => 'Test'}])

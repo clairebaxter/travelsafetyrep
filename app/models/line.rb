@@ -6,6 +6,9 @@ class Line < ActiveRecord::Base
     validates :description, presence: {message: "Please write a description."}
     validates :description, length: { in: 5..50}
     
+    has_attached_file :image
+    validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+    
     #def self.all_colors ; %w['Blue', 'Brown', 'Gray', 'Green', 'Light Green', 'Orange', 'Yellow', 'Purple', 'Red'] ; end #  shortcut: array of strings
         #validates :train, :presence => true
         #validates :borough, :presence => true

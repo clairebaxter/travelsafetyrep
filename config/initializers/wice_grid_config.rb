@@ -14,7 +14,7 @@ if defined?(Wice::Defaults)
 
   # If REUSE_LAST_COLUMN_FOR_FILTER_ICONS is true and the last column doesn't have any filter and column name, it will be used
   # for filter related icons (filter icon, reset icon, show/hide icon), otherwise an additional table column is added.
-  Wice::Defaults::REUSE_LAST_COLUMN_FOR_FILTER_ICONS = false
+  Wice::Defaults::REUSE_LAST_COLUMN_FOR_FILTER_ICONS = true
 
   # The label of the first option of a custom dropdown list meaning 'All items'
   Wice::Defaults::CUSTOM_FILTER_ALL_LABEL = '--'
@@ -41,7 +41,7 @@ if defined?(Wice::Defaults)
   Wice::Defaults::SHOW_FILTER = :always
 
   # A boolean value specifying if a change in a filter triggers reloading of the grid.
-  Wice::Defaults::AUTO_RELOAD = false
+  Wice::Defaults::AUTO_RELOAD = true
 
   # SQL operator used for matching strings in string filters.
   Wice::Defaults::STRING_MATCHING_OPERATOR = 'LIKE'

@@ -20,6 +20,9 @@ gem 'omniauth'
 gem 'devise'
 gem 'rdoc'
 
+#to add images to database
+gem "paperclip", "~> 4.1.1"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

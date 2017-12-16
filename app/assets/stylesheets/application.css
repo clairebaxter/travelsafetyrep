@@ -23,10 +23,14 @@ body {
 }
 input, select, textarea{
     color: #000000;
+        font-family: 'Barlow', sans-serif!important;
+
 }
 
 textarea:focus, input:focus {
     color: #000000;
+        font-family: 'Barlow', sans-serif!important;
+
 }
 h1{
   font-size: 32px;
@@ -44,6 +48,7 @@ h3 {
   text-transform: uppercase;
 }
 footer {
+
 
    bottom:0;
    width:100%;
@@ -71,10 +76,6 @@ button {
 }
 
 
-login{
-    font-family: 'Barlow', sans-serif!important;
-
-}
 
 #submit_tag {
   color: #000000;
@@ -90,6 +91,8 @@ login{
   font-size: 30px;
   font-weight: 300;
   text-decoration: none;
+  font-family: 'Barlow', sans-serif!important;
+
 }
 
 .link:hover {
@@ -176,6 +179,8 @@ login{
 }
 .navbar.navbar-default .navbar-link {
   color: #292929;
+  font-family: 'Barlow', sans-serif!important;
+
 }
 .navbar.navbar-default .navbar-link:hover {
   color: red;
@@ -189,7 +194,7 @@ login{
 }
 
 .nav.navbar-nav > navbar-left {
-  font-family: "Segoe UI", 'Arial', 'sans-serif';
+  font-family: 'Barlow', sans-serif!important;
   font-size: 11px;
 }
 
