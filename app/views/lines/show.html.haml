@@ -5,7 +5,7 @@
 //= require wice_grid
 <body>
 </nav>
-%h2 Details about #{@line.train}
+%h2#details Details about #{@line.train}
 %ul#details
   %li#traindetails
     Color:
@@ -13,7 +13,7 @@
   %li#traindetails
     Borough:
     = @line.borough
-%h2 Description:
+%h2#description Description:
 %p#description= @line.description
 - if @line.train == 'L'
   = image_tag("Ltrain1.png", {:style => "width:400px;"})

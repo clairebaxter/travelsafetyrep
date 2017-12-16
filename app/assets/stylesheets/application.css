@@ -65,12 +65,14 @@ footer {
 
 }
 ul {
+  
   list-style-type: none;
   text-align: center;
   font-family: 'Barlow', sans-serif!important;
 
 }
 li{
+  font-size: 30px;
   padding-right: 45px;
   text-align: center;
   font-family: 'Barlow', sans-serif!important;
@@ -88,7 +90,13 @@ button {
 
 }
 
+#description:{
+  font-size: 50px;
+}
 
+#details {
+  font-size: 50px;
+}
 
 #submit_tag {
   color: #000000;
