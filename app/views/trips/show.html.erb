@@ -19,13 +19,12 @@
             </table>
         </div>
         <div>
-            <a href = "/trips/join/<%=@trip.id %>">Join</a>
             <a>
                 <%@trip.passenger_name%>
                 <% if @trip.passenger_name==@passenger.name and session[:testing?] != true%>
-                <%=link_to 'Delete', trip_path(@trip), {:method => :delete,:id => "link"}%>
+                <%=link_to 'Delete', trip_path(@trip), {:method => :delete,:class => "link"}%>
                 <% else %>
-          
+                <%=link_to 'Join', join_path, {:class => "link"}%>
                 <% end %>
             </a>
         </div>

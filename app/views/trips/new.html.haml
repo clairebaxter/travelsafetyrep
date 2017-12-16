@@ -1,13 +1,14 @@
 %h2 Create New Trip
 = form_tag trips_path, :method => :post do
-
+    =label :trip, :passenger_name, "Passenger"
+    =text_field :trip, :passenger_name,:style => "color:black;"
+    
     = label :trip, :train, 'Train'
-    = select :trip, :train, ['1', '2','3','4','5','6','7','A','C','E','B','D','G','J','F','L','N','Q','R','W','S']
+    = select :trip, :train, ['1', '2','3','4','5','6','7','A','C','E','B','D','G','J','F','L','N','Q','R','W','S'], :style => "color:black;"
     
     = label :trip, :timestamps, 'Departure Time'
-    = datetime_select :trip, :timestamps, default: Time.now-6.hours, ampm: true
+    = datetime_select :trip, :timestamps, default: Time.now-6.hours+5.minutes, ampm: true,:style => "color:black;"
 
     = submit_tag("Save Changes", :style => "color:black;")
     
 %p= link_to 'Back to trips list', trips_path,{:class => "link"}
-%p= link_to 'Back to all lines list', lines_path,{:class => "link"}

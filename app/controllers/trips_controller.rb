@@ -40,8 +40,8 @@ class TripsController < ApplicationController
     def create
         @passenger = Passenger.find(session[:passenger_id])
         params[:trip][:passenger_name] = @passenger.name
-        params_map = ActiveSupport::HashWithIndifferentAccess.new(params[:trip])
-        @trip = Trip.new(params_map)
+        #params_map = ActiveSupport::HashWithIndifferentAccess.new(params[:trip])
+        @trip = Trip.new(trip_params)
        
         if @trip.valid?
             #byebug
@@ -54,7 +54,6 @@ class TripsController < ApplicationController
             flash[:notice] = @trip.errors.full_messages
             render "new"
         end
-        #redirect_to trip_path
     end
     
     def edit 
@@ -63,18 +62,17 @@ class TripsController < ApplicationController
     
     def update
         @trip = Trip.find params[:id]
-        #byebug
         params_map = ActiveSupport::HashWithIndifferentAccess.new(params[:trip])
         @trip.update(params_map)
-        #byebug
+
         flash[:notice] = "Your #{@trip.train} train trip was successfully updated."
         redirect_to @trip
     end
     
     def destroy
         @trip = Trip.find params[:id]
-        #params_map = ActiveSupport::HashWithIndifferentAccess.new(params[:line])
-        @trip.destroy #(params_map)
+        @trip.destroy
+        
         flash[:notice] = "Your #{@trip.train} train trip was successfully deleted."
         redirect_to trips_path
     end
