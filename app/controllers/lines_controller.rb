@@ -2,9 +2,7 @@ class LinesController < ApplicationController
     before_action :force_log_in
     
     def index
-        #@lines = Line.all
         @lines = Line.order(:train).page params[:page]
-        #@lines = Line.order(:train).page(params[:page]).per(9)
         
         @lines_grid = initialize_grid(Line,
         per_page: 5 )
@@ -29,7 +27,6 @@ class LinesController < ApplicationController
             redirect_to lines_path
             flash[:notice] = "#{@line.train} was successfully created."
         else 
-            #byebug
             flash[:notice] = @line.errors.full_messages
             render "new"
         end
@@ -49,8 +46,7 @@ class LinesController < ApplicationController
     
     def destroy
         @line = Line.find params[:id]
-        #params_map = ActiveSupport::HashWithIndifferentAccess.new(params[:line])
-        @line.destroy #(params_map)
+        @line.destroy
         flash[:notice] = "#{@line.train} was successfully deleted."
         redirect_to lines_path
     end

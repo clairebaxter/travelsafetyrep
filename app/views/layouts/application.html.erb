@@ -17,58 +17,46 @@
 <body>
   <header>
     <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-    <a><%= link_to 'Urban Pancake', root_path, :class => 'navbar-brand', data: { keybinding: 'h' } %></a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li <% if current_page?(trips_path) or current_page?(trips_new_newtrip_path) %> class="active" <% end %>>
-        <% if session[:logged_in] and session[:testing?] != true and current_user%>
-        <%= link_to 'Trips', trips_path, data: { keybinding: 't' } %>
-        <% else %>
-          
-        <% end %>
-      </li>
-      <li <% if current_page?(lines_path) or  current_page?(lines_new_path)%> class="active" <% end %> >
-        <% if session[:logged_in] and session[:testing?] != true and current_user%>
-        <%= link_to 'Train Info', lines_path, data: { keybinding: 'i' } %>
-        <% else %>
-          
-        <% end %>
-      </li>
-      <li <% if current_page?(account_path) %> class="active" <% end %> >
-        <% if session[:logged_in] and session[:testing?] != true and current_user%>
-        <%= link_to 'Account', account_path, data: { keybinding: 'a' } %>
-        <% else %>
-          
-        <% end %>
-        </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li>
-            
-        <!--Note: "active" tab not working-->
-            
-        <!--Had to move this, probably not a 1-1 transfer though..-->
-            
+      <div class="container-fluid">
+        
         <!--PLEASE DON'T REMOVE THE session[:testing?] FROM BELOW -->
         <!--IT IS USED IN THE CUCUMBER TESTING TO MAKE A FAKE USER-->
         <!--WITHOUT IT, THE CUCUMBER TESTS WILL FAIL!             -->
-        <% if session[:logged_in] and session[:testing?] != true and current_user%>
-          <a href="<%= account_path %>/" <% if current_page?(lines_path(current_user)) %> class="uk-active" <% end %> >
-        <% else %>
+        
+        <ul class="nav navbar-nav">
+          <li <% if current_page?(trips_path) or current_page?(trips_new_newtrip_path) %> class="active" <% end %>>
+            <% if session[:logged_in] and session[:testing?] != true and current_user%>
+            <%= link_to 'Trips', trips_path, data: { keybinding: 't' } %>
+            <% else %>
           
-        <% end %>
-        <!--trying to fix-->
+            <% end %>
+          </li>
+          <li <% if current_page?(lines_path) or  current_page?(lines_new_path)%> class="active" <% end %> >
+            <% if session[:logged_in] and session[:testing?] != true and current_user%>
+            <%= link_to 'Train Info', lines_path, data: { keybinding: 'i' } %>
+            <% end %>
+          </li>
+          <li <% if current_page?(account_path) %> class="active" <% end %> >
+            <% if session[:logged_in] and session[:testing?] != true and current_user%>
+            <%= link_to 'Account', account_path, data: { keybinding: 'a' } %>
+            <% end %>
+            </li>
+        </ul>
+        
+        <div class="navbar-header">
+          <a><%= link_to 'Urban Pancake', root_path, :class => 'navbar-brand', data: { keybinding: 'h' } %></a>
+        </div>
+        
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <% if session[:logged_in] and session[:testing?] != true and current_user%>
+              <a href="<%= account_path %>/" <% if current_page?(lines_path(current_user)) %> class="uk-active" <% end %> >
+            <% end %>
          
-          <% if current_user %>
-            Hi, <%= current_user.name.split(" ")[0] %> 
-          <% else %>
-          <% end %>  
+            <% if current_user %>
+              Hi, <%= current_user.name.split(" ")[0] %> 
+            <% end %>  
           </a>
-          <div class="uk-navbar-dropdown" uk-dropdown="pos: bottom-right">
-            <%#= render :partial => '/sessions/login_section' %>
-          </div>
       </li>
       <li>
         <% if session[:logged_in] and session[:testing?] != true and current_user%>

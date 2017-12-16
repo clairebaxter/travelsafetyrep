@@ -2,15 +2,15 @@ class TripsController < ApplicationController
     before_action :force_log_in
     def index
         @trips = Trip.order(:passenger_name).page params[:page]
-        
         @trips_grid = initialize_grid(Trip, per_page: 5 )
     end
 
     def show
         @passenger = Passenger.find(session[:passenger_id])
         @trip = Trip.find(params[:id])
+        
+        #create string of passengers that are also on the trip
         @passengerString = ''
-        #byebug
         @trip.passenger.each do |p|
             @passengerString += p.name + " "
         end
@@ -18,13 +18,11 @@ class TripsController < ApplicationController
     
     def newtrip 
         @trip = Trip.new
-       
     end
 
     def join
         @trip = Trip.find params[:id]
         @passenger = Passenger.find(session[:passenger_id])
-        #byebug
         if @trip.passenger.take(session[:passenger_id]) != []
             flash[:notice] = "You can not join this trip, you are already on it!"
         else
@@ -38,17 +36,15 @@ class TripsController < ApplicationController
     end
     
     def create
+        #make the logged in passenger the trip creator by setting the passenger name
         @passenger = Passenger.find(session[:passenger_id])
         params[:trip][:passenger_name] = @passenger.name
-        #params_map = ActiveSupport::HashWithIndifferentAccess.new(params[:trip])
+        
         @trip = Trip.new(trip_params)
        
         if @trip.valid?
-            #byebug
             @trip.save
-            #byebug
             redirect_to trips_path
-            #byebug
             flash[:notice] = "Thank you, #{@trip.passenger_name}, your #{@trip.train} trip was successfully created."
         else 
             flash[:notice] = @trip.errors.full_messages
@@ -66,7 +62,7 @@ class TripsController < ApplicationController
         @trip.update(params_map)
 
         flash[:notice] = "Your #{@trip.train} train trip was successfully updated."
-        redirect_to @trip
+        redirect_to trips_path
     end
     
     def destroy

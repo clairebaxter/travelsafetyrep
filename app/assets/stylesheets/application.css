@@ -116,14 +116,19 @@ table {
   margin: 0px auto;
   font-size: 16px;
   font-weight: 100;
+  width: 50%;
+  border: 1px solid white;
+}
+th,td{
+  border: 1px solid white;
+  text-align: left;
+  padding: 5px;
 }
 button {
   color: black;
   font-family: 'Barlow', sans-serif!important;
 
 }
-
-
 
 #submit_tag {
   color: #000000;
@@ -172,20 +177,20 @@ button {
   border-bottom: 1px solid #ffffff;
   border-left: 1px solid #000025;
   border-right: 1px solid #000025;
-  padding-top: 50px;
+  padding-top: 5px;
   font-family: 'Barlow', sans-serif!important;
 
 }
 .navbar.navbar-default .navbar-brand {
   color: #a8dae2;
-  font-size: 60px;
+  font-size: 50px;
   padding-bottom: 30px;
- font-family: 'Permanent Marker', cursive!important;
+  font-family: 'Permanent Marker', cursive!important;
 }
 .navbar.navbar-default .navbar-brand:hover,
 .navbar.navbar-default .navbar-brand:focus {
-  color: red;
-  font-size: 60px;
+  
+  font-size: 52px;
 
 }
 .navbar.navbar-default .navbar-text {
@@ -205,8 +210,8 @@ button {
 }
 .navbar.navbar-default .navbar-nav > .active > a:hover,
 .navbar.navbar-default .navbar-nav > .active > a:focus {
-  color: #a8dae2;
-  background-color: #000025;
+  color: red;
+
 }
 
 .navbar.navbar-default .navbar-nav > .open > a,
@@ -238,7 +243,6 @@ button {
   color: red;
 }
 
-
 .navbar-brand {
   transform: translateX(-50%);
   left: 50%;
@@ -252,6 +256,7 @@ button {
 
 .navbar-brand {
   padding-top: 15px;
+  padding-right: 10px;
 }
 .navbar-brand>img {
   height: auto;
