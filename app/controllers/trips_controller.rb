@@ -44,7 +44,7 @@ class TripsController < ApplicationController
         @trip = Trip.new(params_map)
        
         if @trip.valid?
-            byebug
+            #byebug
             @trip.save
             #byebug
             redirect_to trips_path
