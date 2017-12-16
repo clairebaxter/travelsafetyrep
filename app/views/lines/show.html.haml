@@ -19,7 +19,18 @@
   = image_tag("Ltrain1.png", {:style => "width:400px;"})
   %br
   = image_tag("Ltrain2.png", {:style => "width:400px;"})
-
+- if @line.train == '1'
+  = image_tag("1train1.png", {:style => "width:400px;"})
+  %br
+  = image_tag("1train2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("1train3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("1train4.png", {:style => "width:400px;"})
+  %br
+  = image_tag("1train5.png", {:style => "width:400px;"})
+  %br
+  = image_tag("1train6.png", {:style => "width:400px;"})
 
 %p= link_to 'Edit Info', edit_line_path(@line),{:id => "link"}
 %p= link_to 'Delete', line_path(@line), {:method => :delete,:id => "link"}

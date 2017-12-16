@@ -71,8 +71,10 @@ ul {
 
 }
 li{
-  padding-left: 0px;
+  padding-right: 45px;
   text-align: center;
+  font-family: 'Barlow', sans-serif!important;
+
 }
 table {
   color: #ffffff;
