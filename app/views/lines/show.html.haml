@@ -14,11 +14,15 @@
     Borough:
     = @line.borough
 %h2#description Description:
-%p#description= @line.description
+%p#linedescribe= @line.description
 - if @line.train == 'L'
   = image_tag("Ltrain1.png", {:style => "width:400px;"})
   %br
   = image_tag("Ltrain2.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ltrain3.png", {:style => "width:400px;"})
+  %br
+  = image_tag("Ltrain4.png", {:style => "width:400px;"})
 - if @line.train == '1'
   = image_tag("1train1.png", {:style => "width:400px;"})
   %br
