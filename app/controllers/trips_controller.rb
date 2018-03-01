@@ -22,11 +22,14 @@ class TripsController < ApplicationController
 
     def join
         @trip = Trip.find params[:id]
+        #byebug
         @passenger = Passenger.find(session[:passenger_id])
+        #byebug
         if @trip.passenger.take(session[:passenger_id]) != []
             flash[:notice] = "You can not join this trip, you are already on it!"
         else
             @trip.passenger << @passenger
+            #byebug
             flash[:notice] = "You have successfully joined this #{@trip.train} trip."
         end
         if @trip.save

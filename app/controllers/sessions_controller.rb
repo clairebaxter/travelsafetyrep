@@ -20,6 +20,7 @@ class SessionsController < ApplicationController
   params.require(:passenger).permit(:picture)
   end
   def show
-    #{@current_passenger.image}
+    
+    #@current_passenger.image
   end
 end

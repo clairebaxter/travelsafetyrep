@@ -22,7 +22,9 @@ body {
   color: #fff!important;
   text-align: center;
   font-family: 'Barlow', sans-serif!important;
+  
 }
+
 input, select, textarea{
   color: #000000;
   font-family: 'Barlow', sans-serif!important;
@@ -118,7 +120,7 @@ table {
   font-weight: 100;
   width: 50%;
   border: 1px solid white;
-}
+  }
 th,td{
   border: 1px solid white;
   text-align: left;
@@ -151,6 +153,7 @@ button {
 .link:hover {
   color: #FFF;
   text-decoration: none;
+  
 }
 
 .traindetails{
@@ -204,9 +207,16 @@ button {
 .navbar.navbar-default .navbar-nav > li > a:focus {
   color: red;
 }
+@keyframes active {
+    0%   {color:#a8dae2;}
+    50%  {color:blue;}
+    100% {color:#a8dae2; }
+}
 .navbar.navbar-default .navbar-nav > .active > a{
   background-color: white;
-  
+  animation-name: active;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
 }
 .navbar.navbar-default .navbar-nav > .active > a:hover,
 .navbar.navbar-default .navbar-nav > .active > a:focus {
@@ -242,21 +252,31 @@ button {
 .navbar.navbar-default .navbar-link:hover {
   color: red;
 }
+@keyframes example {
+    0%   {color:#a8dae2;}
+    25%  {color:yellow;}
+    50%  {color:blue;}
+    75%  {color:green;}
+    100% {color:#a8dae2; }
+}
 
 .navbar-brand {
   transform: translateX(-50%);
   left: 50%;
   position: absolute;
+  animation-name: example;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
 }
 
-.nav.navbar-nav > navbar-left {
+.nav.navbar-nav navbar-left {
   font-family: 'Barlow', sans-serif!important;
   font-size: 11px;
 }
 
 .navbar-brand {
   padding-top: 15px;
-  padding-right: 10px;
+  padding-right: 0px;
 }
 .navbar-brand>img {
   height: auto;
