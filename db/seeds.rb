@@ -54,4 +54,13 @@ more_lines.each do |attributes|
   #Line.find_or_create_by(attributes[:train])
 end
 
-trips = Trip.create([{:train => 'A', :passenger_name => 'Test'}])
+trips = [
+  {:train => 'A', :passenger_name => 'Test', :timestamps => "2018-12-16 14:35:00"},
+  {:train => 'B', :passenger_name => 'Test',:timestamps => "2018-12-16 14:35:00"},
+  {:train => 'C', :passenger_name => 'Test',:timestamps => "2018-12-16 14:35:00"},
+  {:train => 'D', :passenger_name => 'Test',:timestamps => "2018-12-16 14:35:00"},
+  {:train => 'E', :passenger_name => 'Wendy',:timestamps => "2018-12-16 14:35:00"}]
+
+trips.each do |trip|
+  Trip.create!(trip)
+end

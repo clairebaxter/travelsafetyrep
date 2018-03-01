@@ -3,6 +3,7 @@ class TripsController < ApplicationController
     def index
         @trips = Trip.order(:passenger_name).page params[:page]
         @trips_grid = initialize_grid(Trip, per_page: 5 )
+        #byebug
     end
 
     def show

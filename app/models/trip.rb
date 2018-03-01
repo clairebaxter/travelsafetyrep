@@ -8,9 +8,9 @@ class Trip < ActiveRecord::Base
     validate :timestamps_cannot_be_in_the_past
     
     def timestamps_cannot_be_in_the_past
-        if timestamps < Time.now-6.hours
-            errors.add(:timestamps, "can't be in the past")
-        end
+        #if timestamps < Time.now-6.hours
+         #   errors.add(:timestamps, "can't be in the past")
+        #end
     end
 
 end
