@@ -2,18 +2,15 @@ class Passenger < ActiveRecord::Base
     has_and_belongs_to_many :trip
     
     def self.create_with_omniauth(auth)
+        byebug
         Passenger.create!(
           :provider => auth["provider"],
           :uid => auth["uid"],
           :name => auth["info"]["name"],
           :email => auth["info"]["email"],
-          
-         
           :gender => auth["info"]["gender"])
-          
+          byebug
     end
-    
-    
     
     
     def fetch_fb_picture

@@ -41,9 +41,12 @@ class TripsController < ApplicationController
     
     def create
         #make the logged in passenger the trip creator by setting the passenger name
-        @passenger = Passenger.find(session[:passenger_id])
-        params[:trip][:passenger_name] = @passenger.name
-        
+        if @passenger != nil
+            @passenger = Passenger.find(session[:passenger_id])
+            params[:trip][:passenger_name] = @passenger.name
+        else 
+            params[:trip][:passenger_name] = "Donald Duck"
+        end
         @trip = Trip.new(trip_params)
        
         if @trip.valid?

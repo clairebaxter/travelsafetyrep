@@ -61,7 +61,7 @@
         <% if session[:logged_in] and session[:testing?] != true and current_user%>
           <%=link_to ' Logout', logout_path, :class => 'glyphicon glyphicon-log-out', data: { keybinding: 'o' }%>
         <%else %>
-          <li><%=link_to ' Login', login_path, :class => 'glyphicon glyphicon-log-in', data: { keybinding: 'l' }%></li>
+          <li><%=link_to ' Login', login_path , :class => 'glyphicon glyphicon-log-in', data: { keybinding: 'l' }%></li>
         <%end%>
       </li>
     </ul>
